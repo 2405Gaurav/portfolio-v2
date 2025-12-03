@@ -94,7 +94,7 @@ const Hero = () => {
       </motion.div>
 
       <div className='flex justify-between gap-8'>
-        <div className='flex flex-1 flex-col gap-4'>
+        <div className='flex flex-1 flex-col gap-4 md:items-start items-center text-center md:text-left'>
           <h1 className='flex flex-col flex-wrap gap-2 text-xl font-bold sm:text-3xl'>
             <motion.div initial={{ x: 20, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ ease: 'easeOut' }}>
               {translations.titleTop}
@@ -103,7 +103,7 @@ const Hero = () => {
               initial={{ x: 30, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               transition={{ ease: 'easeOut' }}
-              className='flex flex-wrap gap-2'
+              className='flex flex-wrap gap-2 justify-center md:justify-start'
             >
               <motion.div layout key='title-middle-left'>
                 {translations.titleMiddleLeft}
