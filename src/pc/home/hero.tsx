@@ -69,8 +69,32 @@ const Hero = () => {
 
   return (
     <div className='my-16 space-y-6'>
+      {/* Mobile: Image at top, centered */}
+      <motion.div
+        className='relative mx-auto size-32 md:hidden'
+        initial={{
+          scale: 0
+        }}
+        animate={{
+          scale: 1
+        }}
+        transition={{
+          duration: 0.3
+        }}
+      >
+        <BlurImage
+          src='/images/itsme4.png'
+          className='size-32 rounded-full'
+          width={128}
+          height={128}
+          alt={`${MY_NAME}'s Logo`}
+          lazy={false}
+        />
+        <div className='absolute inset-0 -z-10 bg-linear-to-tl from-purple-700 to-orange-700 opacity-50 blur-2xl' />
+      </motion.div>
+
       <div className='flex justify-between gap-8'>
-        <div className='flex flex-col gap-4'>
+        <div className='flex flex-1 flex-col gap-4'>
           <h1 className='flex flex-col flex-wrap gap-2 text-xl font-bold sm:text-3xl'>
             <motion.div initial={{ x: 20, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ ease: 'easeOut' }}>
               {translations.titleTop}
@@ -79,12 +103,12 @@ const Hero = () => {
               initial={{ x: 30, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               transition={{ ease: 'easeOut' }}
-              className='flex gap-2'
+              className='flex flex-wrap gap-2'
             >
               <motion.div layout key='title-middle-left'>
                 {translations.titleMiddleLeft}
               </motion.div>
-              <div className='relative overflow-hidden'>
+              <div className='relative min-w-[120px] overflow-hidden'>
                 <AnimatePresence mode='popLayout'>
                   <motion.div
                     key={currentIndex}
@@ -120,28 +144,30 @@ const Hero = () => {
             {translations.locationTimezone}
           </motion.div>
         </div>
-       <motion.div
-  className='relative hidden size-56 md:block'
-  initial={{
-    scale: 0
-  }}
-  animate={{
-    scale: 1
-  }}
-  transition={{
-    duration: 0.3
-  }}
->
-  <BlurImage
-    src='/images/itsme4.png'
-    className='size-56 rounded-full'
-    width={300}
-    height={300}
-    alt={`${MY_NAME}'s Logo`}
-    lazy={false}
-  />
-  <div className='absolute inset-0 -z-10 bg-linear-to-tl from-purple-700 to-orange-700 opacity-50 blur-2xl' />
-</motion.div>
+        
+        {/* Desktop: Image on the right side */}
+        <motion.div
+          className='relative hidden size-56 md:block'
+          initial={{
+            scale: 0
+          }}
+          animate={{
+            scale: 1
+          }}
+          transition={{
+            duration: 0.3
+          }}
+        >
+          <BlurImage
+            src='/images/itsme4.png'
+            className='size-56 rounded-full'
+            width={300}
+            height={300}
+            alt={`${MY_NAME}'s Logo`}
+            lazy={false}
+          />
+          <div className='absolute inset-0 -z-10 bg-linear-to-tl from-purple-700 to-orange-700 opacity-50 blur-2xl' />
+        </motion.div>
       </div>
     </div>
   )
