@@ -1,6 +1,7 @@
-import { Progress as ProgressPrimitive } from 'radix-ui'
+import * as ProgressPrimitive from "@radix-ui/react-progress"
 
-import { cn } from '../utils/cn'
+
+import { cn } from '@/lib/utils'
 
 type ProgressProps = React.ComponentProps<typeof ProgressPrimitive.Root>
 

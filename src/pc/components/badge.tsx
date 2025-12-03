@@ -1,7 +1,7 @@
 import { cva, type VariantProps } from 'cva'
-import { Slot } from 'radix-ui'
+import { Slot } from '@radix-ui/react-slot'
 
-import { cn } from '../utils/cn'
+import { cn } from '@/lib/utils'
 
 const badgeVariants = cva({
   base: [
@@ -32,7 +32,7 @@ type BadgeProps = React.ComponentProps<'span'> &
 
 const Badge = (props: BadgeProps) => {
   const { className, variant, asChild = false, ...rest } = props
-  const Comp = asChild ? Slot.Root : 'span'
+  const Comp = asChild ? Slot : 'span'
 
   return <Comp data-slot='badge' className={cn(badgeVariants({ variant, className }))} {...rest} />
 }

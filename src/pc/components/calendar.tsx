@@ -2,8 +2,7 @@ import { ChevronDownIcon, ChevronLeftIcon, ChevronRightIcon } from 'lucide-react
 import { useEffect, useRef } from 'react'
 import { type CustomComponents, type DayButton, DayPicker, getDefaultClassNames } from 'react-day-picker'
 
-import { cn } from '../utils/cn'
-
+import { cn } from '@/lib/utils'
 import { Button, buttonVariants } from './button'
 
 type CalendarDayButtonProps = React.ComponentProps<typeof DayButton>
@@ -30,7 +29,7 @@ const CalendarDayButton = (props: CalendarDayButtonProps) => {
       data-range-end={modifiers.range_end}
       data-range-middle={modifiers.range_middle}
       className={cn(
-        'flex aspect-square size-auto w-full min-w-(--cell-size) flex-col gap-1 leading-none font-normal',
+        'flex aspect-square size-auto w-full min-w-[var(--cell-size)] flex-col gap-1 leading-none font-normal',
         'dark:hover:text-accent-foreground',
         'group-data-[focused=true]/day:relative group-data-[focused=true]/day:z-10 group-data-[focused=true]/day:border-ring group-data-[focused=true]/day:ring-[3px] group-data-[focused=true]/day:ring-ring/50',
         'data-[range-end=true]:rounded-md data-[range-end=true]:rounded-r-md data-[range-end=true]:bg-primary data-[range-end=true]:text-primary-foreground',
@@ -59,10 +58,10 @@ const customComponents: Partial<CustomComponents> = {
     }
 
     if (orientation === 'right') {
-      return <ChevronRightIcon className={cn('size-4', className)} {...props} />
+      return <ChevronRightIcon className={cn('size-4', className)} {...rest} />
     }
 
-    return <ChevronDownIcon className={cn('size-4', className)} {...props} />
+    return <ChevronDownIcon className={cn('size-4', className)} {...rest} />
   },
   DayButton: CalendarDayButton,
   WeekNumber: (props) => {
@@ -70,7 +69,7 @@ const customComponents: Partial<CustomComponents> = {
 
     return (
       <td {...rest}>
-        <div className='flex size-(--cell-size) items-center justify-center text-center'>{children}</div>
+        <div className='flex size-[var(--cell-size)] items-center justify-center text-center'>{children}</div>
       </td>
     )
   }
@@ -115,23 +114,23 @@ const Calendar = (props: CalendarProps) => {
         month: cn('flex w-full flex-col gap-4', defaultClassNames.month),
         nav: cn('absolute inset-x-0 top-0 flex w-full items-center justify-between gap-1', defaultClassNames.nav),
         button_previous: cn(
-          'size-(--cell-size) p-0 select-none',
+          'size-[var(--cell-size)] p-0 select-none',
           'aria-disabled:opacity-50',
           buttonVariants({ variant: buttonVariant }),
           defaultClassNames.button_previous
         ),
         button_next: cn(
-          'size-(--cell-size) p-0 select-none',
+          'size-[var(--cell-size)] p-0 select-none',
           'aria-disabled:opacity-50',
           buttonVariants({ variant: buttonVariant }),
           defaultClassNames.button_next
         ),
         month_caption: cn(
-          'flex h-(--cell-size) w-full items-center justify-center px-(--cell-size)',
+          'flex h-[var(--cell-size)] w-full items-center justify-center px-[var(--cell-size)]',
           defaultClassNames.month_caption
         ),
         dropdowns: cn(
-          'flex h-(--cell-size) w-full items-center justify-center gap-1.5 text-sm font-medium',
+          'flex h-[var(--cell-size)] w-full items-center justify-center gap-1.5 text-sm font-medium',
           defaultClassNames.dropdowns
         ),
         dropdown_root: cn(
@@ -154,7 +153,7 @@ const Calendar = (props: CalendarProps) => {
           defaultClassNames.weekday
         ),
         week: cn('mt-2 flex w-full', defaultClassNames.week),
-        week_number_header: cn('w-(--cell-size) select-none', defaultClassNames.week_number_header),
+        week_number_header: cn('w-[var(--cell-size)] select-none', defaultClassNames.week_number_header),
         week_number: cn('text-[0.8rem] text-muted-foreground select-none', defaultClassNames.week_number),
         day: cn(
           'group/day relative aspect-square size-full p-0 text-center select-none',

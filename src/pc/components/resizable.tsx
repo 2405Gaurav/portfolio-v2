@@ -3,7 +3,7 @@
 import { GripVerticalIcon } from 'lucide-react'
 import * as ResizablePrimitive from 'react-resizable-panels'
 
-import { cn } from '../utils/cn'
+import { cn } from '@/lib/utils'
 
 type ResizablePanelGroupProps = React.ComponentProps<typeof ResizablePrimitive.PanelGroup>
 

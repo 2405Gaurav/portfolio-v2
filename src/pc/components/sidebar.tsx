@@ -2,18 +2,19 @@
 
 import { cva, type VariantProps } from 'cva'
 import { PanelLeftIcon } from 'lucide-react'
-import { Slot } from 'radix-ui'
+import { Slot } from "@radix-ui/react-slot"
+
 import { createContext, use, useCallback, useEffect, useMemo, useState } from 'react'
 
-import { useIsMobile } from '../hooks/use-is-mobile'
-import { cn } from '../utils/cn'
+import { useIsMobile } from '@/hooks/use-in-mobile'
+import { cn } from '@/lib/utils'
 
 import { Button } from './button'
 import { Input } from './input'
 import { Separator } from './separator'
 import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle } from './sheet'
 import { Skeleton } from './skeleton'
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from './tooltip'
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/pc/components/tooltip'
 
 const SIDEBAR_COOKIE_NAME = 'sidebar_state'
 const SIDEBAR_COOKIE_MAX_AGE = 60 * 60 * 24 * 7
@@ -416,7 +417,7 @@ type SidebarGroupLabelProps = React.ComponentProps<'div'> & { asChild?: boolean 
 
 const SidebarGroupLabel = (props: SidebarGroupLabelProps) => {
   const { className, asChild = false, ...rest } = props
-  const Comp = asChild ? Slot.Root : 'div'
+  const Comp = asChild ? Slot : 'div'
 
   return (
     <Comp
@@ -438,7 +439,7 @@ type SidebarGroupActionProps = React.ComponentProps<'button'> & { asChild?: bool
 
 const SidebarGroupAction = (props: SidebarGroupActionProps) => {
   const { className, asChild = false, ...rest } = props
-  const Comp = asChild ? Slot.Root : 'button'
+  const Comp = asChild ? Slot : 'button'
 
   return (
     <Comp
@@ -553,7 +554,7 @@ const SidebarMenuButton = (props: SidebarMenuButtonProps) => {
     className,
     ...rest
   } = props
-  const Comp = asChild ? Slot.Root : 'button'
+  const Comp = asChild ? Slot : 'button'
   const { isMobile, state } = useSidebar()
 
   let _tooltip = tooltip
@@ -594,7 +595,7 @@ type SidebarMenuActionProps = React.ComponentProps<'button'> & {
 
 const SidebarMenuAction = (props: SidebarMenuActionProps) => {
   const { className, asChild = false, showOnHover = false, ...rest } = props
-  const Comp = asChild ? Slot.Root : 'button'
+  const Comp = asChild ? Slot: 'button'
 
   return (
     <Comp
@@ -718,7 +719,7 @@ type SidebarMenuSubButtonProps = React.ComponentProps<'a'> & {
 
 const SidebarMenuSubButton = (props: SidebarMenuSubButtonProps) => {
   const { asChild = false, size = 'md', isActive = false, className, ...rest } = props
-  const Comp = asChild ? Slot.Root : 'a'
+  const Comp = asChild ? Slot: 'a'
 
   return (
     <Comp

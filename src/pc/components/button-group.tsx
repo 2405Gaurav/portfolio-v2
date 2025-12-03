@@ -1,7 +1,7 @@
 import { cva, type VariantProps } from 'cva'
-import { Slot } from 'radix-ui'
+import { Slot } from '@radix-ui/react-slot' 
 
-import { cn } from '../utils/cn'
+import { cn } from '@/lib/utils'
 
 import { Separator } from './separator'
 
@@ -49,7 +49,7 @@ type ButtonGroupTextProps = React.ComponentProps<'div'> & {
 
 const ButtonGroupText = (props: ButtonGroupTextProps) => {
   const { className, asChild = false, ...rest } = props
-  const Comp = asChild ? Slot.Root : 'div'
+  const Comp = asChild ? Slot: 'div'
 
   return (
     <Comp

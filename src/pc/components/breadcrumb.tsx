@@ -1,7 +1,7 @@
 import { ChevronRight, MoreHorizontal } from 'lucide-react'
-import { Slot } from 'radix-ui'
+import { Slot } from '@radix-ui/react-slot'
 
-import { cn } from '../utils/cn'
+import { cn } from '@/lib/utils'
 
 type BreadcrumbProps = React.ComponentProps<'nav'>
 
@@ -41,7 +41,7 @@ type BreadcrumbLinkProps = React.ComponentProps<'a'> & {
 
 const BreadcrumbLink = (props: BreadcrumbLinkProps) => {
   const { asChild, className, ...rest } = props
-  const Comp = asChild ? Slot.Root : 'a'
+  const Comp = asChild ? Slot : 'a'
 
   return (
     <Comp

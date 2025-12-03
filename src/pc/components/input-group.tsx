@@ -2,7 +2,7 @@
 
 import { cva, type VariantProps } from 'cva'
 
-import { cn } from '../utils/cn'
+import { cn } from '@/lib/utils'
 
 import { Button } from './button'
 import { Input } from './input'

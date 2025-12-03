@@ -1,34 +1,30 @@
 'use client'
 
-import { Toaster } from '@repo/ui/components/sonner'
-import { TooltipProvider } from '@repo/ui/components/tooltip'
 import { ThemeProvider } from 'next-themes'
+import { Toaster } from '@/pc/components/toaster'
+import { TooltipProvider } from '@/pc/components/tooltip'
 
-import { ORPCQueryProvider } from '@/orpc/tanstack-query/client'
-
-type ProvidesProps = {
+type ProvidersProps = {
   children: React.ReactNode
 }
 
-const Providers = (props: ProvidesProps) => {
-  const { children } = props
-
+export default function Providers({ children }: ProvidersProps) {
   return (
-    <ORPCQueryProvider>
-      <ThemeProvider attribute='class' defaultTheme='system' enableSystem enableColorScheme disableTransitionOnChange>
-        <TooltipProvider>
-          {children}
-          <Toaster
-            toastOptions={{
-              duration: 2500
-            }}
-            visibleToasts={5}
-            expand
-          />
-        </TooltipProvider>
-      </ThemeProvider>
-    </ORPCQueryProvider>
+    <ThemeProvider
+      attribute="class"
+      defaultTheme="system"
+      enableSystem
+      enableColorScheme
+      disableTransitionOnChange
+    >
+      <TooltipProvider>
+        {children}
+        <Toaster
+          toastOptions={{ duration: 2500 }}
+          visibleToasts={5}
+          expand
+        />
+      </TooltipProvider>
+    </ThemeProvider>
   )
 }
-
-export default Providers

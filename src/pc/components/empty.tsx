@@ -1,6 +1,6 @@
 import { cva, type VariantProps } from 'cva'
 
-import { cn } from '../utils/cn'
+import { cn } from '@/lib/utils'
 
 type EmptyProps = React.ComponentProps<'div'>
 

@@ -1,4 +1,4 @@
-import { Logo } from '@repo/ui/components/logo'
+import { Logo } from '@/pc/components/logo'
 
 const getFontSize = (title: string) => {
   const baseSize = 80
@@ -35,10 +35,10 @@ const OGImage = (props: OGImageProps) => {
         color: '#fff'
       }}
     >
-      <Logo width={50} style={{ position: 'absolute', left: 50, top: 50 }} />
+      <Logo width={50}  />
       <div style={{ fontSize, maxWidth: 740, fontWeight: 600 }}>{title}</div>
       <div style={{ display: 'flex', fontSize: 30, position: 'absolute', right: 50, bottom: 50, fontWeight: 500 }}>
-        nelsonlai.dev{url}
+        thegauravthakur.in{url}
       </div>
     </div>
   )
