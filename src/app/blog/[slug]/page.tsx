@@ -8,7 +8,6 @@ import BlogFooter from '@/pc/blog/blog-footer'
 import BlogHeader from '@/pc/blog/blog-header'
 import LikeButton from '@/pc/blog/like-button'
 import ProgressBar from '@/pc/blog/progress-bar'
-import CommentSection from '@/pc/comment-section'
 import JsonLd from '@/pc/json-ld'
 import { MY_NAME } from '@/lib/constants'
 import { getBaseUrl } from '@/utils/get-base-url'
@@ -120,8 +119,6 @@ export default function Page({ params }: { params: { slug: string } }) {
       <ProgressBar />
 
       <BlogFooter post={post} />
-
-      <CommentSection slug={slug} />
     </>
   )
 }
