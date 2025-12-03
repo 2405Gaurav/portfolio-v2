@@ -11,12 +11,12 @@ type Options = {
   formatOptions?: DateTimeFormatOptions
 }
 
-type UseFormattedDate = {
-  (date: Date | string | number, options?: Options): string
-  (date?: Date | string | number, options?: Options): string | null
-}
+// Overloads
+export function useFormattedDate(date: Date | string | number, options?: Options): string
+export function useFormattedDate(date?: Date | string | number, options?: Options): string | null
 
-export const useFormattedDate: UseFormattedDate = (date, options: Options = {}) => {
+// Implementation
+export function useFormattedDate(date?: Date | string | number, options: Options = {}): string | null {
   const {
     relative = false,
     formatOptions = {
@@ -38,7 +38,7 @@ export const useFormattedDate: UseFormattedDate = (date, options: Options = {}) 
     if (Math.abs(daysDiff) > 7) {
       return new Intl.DateTimeFormat('en-US', formatOptions).format(convertedDate)
     }
-    
+
     // Otherwise show relative time (e.g., "2 days ago")
     return dayjs(convertedDate).fromNow()
   } else {

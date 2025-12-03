@@ -6,7 +6,7 @@ import { useRef, useState } from 'react'
 import { toast } from 'sonner'
 import { Separator } from '@/pc/components/separator'
 
-const LikeButton = ({ slug }: { slug: string }) => {
+const LikeButton = ({ }: { slug: string }) => {
   // Local like count (mock value)
   const [likes, setLikes] = useState(0)
 
