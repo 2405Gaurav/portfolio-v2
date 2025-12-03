@@ -6,7 +6,7 @@ export function register() {
 
 export async function onRequestError(
   error: unknown,
-  request: NextRequest
+  
 ) {
   console.error("Request error:", error);
 }
