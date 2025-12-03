@@ -103,6 +103,7 @@
     "zod": "4.1.12"
   },
   "devDependencies": {
+    "@axe-core/playwright": "^4.11.0",
     "@nelsonlaidev/eslint-config": "2.3.3",
     "@nelsonlaidev/prettier-config": "0.1.0",
     "@nelsonlaidev/typescript-config": "1.0.0",
