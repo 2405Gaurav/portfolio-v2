@@ -47,10 +47,10 @@ const Hero = () => {
 
   // Hardcoded translations
   const translations = {
-    titleTop: "Hi, I'm Gaurav 👋",
-    titleMiddleLeft: 'I build',
-    titleMiddleRight: 'things',
-    titleBottom: 'for the web',
+    titleTop: "Hi, I'm Gaurav,a FullStack Developer ",
+    titleMiddleLeft: 'building',
+    titleMiddleRight: 'things for the web',
+    titleBottom: '',
     locationTimezone: '📍 Mohali,Punjab,India'
   }
 
@@ -133,10 +133,10 @@ const Hero = () => {
   }}
 >
   <BlurImage
-    src='/images/itsme2.png'
+    src='/images/itsme4.png'
     className='size-56 rounded-full'
-    width={1024}
-    height={1024}
+    width={300}
+    height={300}
     alt={`${MY_NAME}'s Logo`}
     lazy={false}
   />

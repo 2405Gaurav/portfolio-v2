@@ -16,7 +16,7 @@ type UseFormattedDate = {
   (date?: Date | string | number, options?: Options): string | null
 }
 
-export const useFormattedDate = ((date, options = {}) => {
+export const useFormattedDate: UseFormattedDate = (date, options: Options = {}) => {
   const {
     relative = false,
     formatOptions = {
@@ -44,4 +44,4 @@ export const useFormattedDate = ((date, options = {}) => {
   } else {
     return new Intl.DateTimeFormat('en-US', formatOptions).format(convertedDate)
   }
-}) as UseFormattedDate
+}

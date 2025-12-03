@@ -3,8 +3,8 @@ import { NextResponse } from 'next/server'
 export async function GET() {
   try {
     // Replace with your GitHub username and repo name
-    const owner = 'nelsonlai' // Your GitHub username
-    const repo = 'portfolio' // Your repository name
+    const owner = '2405Gaurav' // Your GitHub username
+    const repo = 'portfolio-v2' // Your repository name
     
     const response = await fetch(
       `https://api.github.com/repos/${owner}/${repo}`,

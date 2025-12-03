@@ -1,54 +1,54 @@
-import type { Metadata } from 'next'
+// import type { Metadata } from 'next'
 
-import { notFound } from 'next/navigation'
-import { type Locale, useTranslations } from 'next-intl'
-import { getTranslations, setRequestLocale } from 'next-intl/server'
-import { use } from 'react'
+// import { notFound } from 'next/navigation'
+// import { type Locale, useTranslations } from 'next-intl'
+// import { getTranslations, setRequestLocale } from 'next-intl/server'
+// import { use } from 'react'
 
-import Mdx from '@/pc/mdx'
-import PageHeader from '@/pc/page-header'
-import { getPageBySlug } from '@/lib/content'
-import { createMetadata } from '@/lib/metadata'
+// import Mdx from '@/pc/mdx'
+// import PageHeader from '@/pc/page-header'
+// import { getPageBySlug } from '@/lib/content'
+// import { createMetadata } from '@/lib/metadata'
 
-export const generateMetadata = async (props: PageProps<'/[locale]/terms'>): Promise<Metadata> => {
-  const { params } = props
-  const { locale } = await params
+// export const generateMetadata = async (props: PageProps<'/[locale]/terms'>): Promise<Metadata> => {
+//   const { params } = props
+//   const { locale } = await params
 
-  const t = await getTranslations({ locale: locale as Locale })
-  const title = t('common.labels.terms')
-  const description = t('terms.description')
+//   const t = await getTranslations({ locale: locale as Locale })
+//   const title = t('common.labels.terms')
+//   const description = t('terms.description')
 
-  return createMetadata({
-    pathname: '/terms',
-    title,
-    description,
-    locale
-  })
-}
+//   return createMetadata({
+//     pathname: '/terms',
+//     title,
+//     description,
+//     locale
+//   })
+// }
 
-const Page = (props: PageProps<'/[locale]/terms'>) => {
-  const { params } = props
-  const { locale } = use(params)
+// const Page = (props: PageProps<'/[locale]/terms'>) => {
+//   const { params } = props
+//   const { locale } = use(params)
 
-  setRequestLocale(locale as Locale)
+//   setRequestLocale(locale as Locale)
 
-  const t = useTranslations()
-  const title = t('common.labels.terms')
-  const description = t('terms.description')
-  const page = getPageBySlug(locale, 'terms')
+//   const t = useTranslations()
+//   const title = t('common.labels.terms')
+//   const description = t('terms.description')
+//   const page = getPageBySlug(locale, 'terms')
 
-  if (!page) {
-    return notFound()
-  }
+//   if (!page) {
+//     return notFound()
+//   }
 
-  const { code } = page
+//   const { code } = page
 
-  return (
-    <>
-      <PageHeader title={title} description={description} />
-      <Mdx code={code} />
-    </>
-  )
-}
+//   return (
+//     <>
+//       <PageHeader title={title} description={description} />
+//       <Mdx code={code} />
+//     </>
+//   )
+// }
 
-export default Page
+// export default Page

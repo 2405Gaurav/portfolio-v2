@@ -15,7 +15,7 @@ export const POSTS: Post[] = [
     modifiedTime: '2024-03-15',
     summary:
       'A comprehensive guide to building modern web applications with Next.js 15 and the App Router.',
-    coverImage: '/images/blog/getting-started-with-nextjs/cover.png'
+    coverImage: '/images/icn1.png'
   },
   {
     slug: 'typescript-best-practices',
@@ -24,7 +24,7 @@ export const POSTS: Post[] = [
     modifiedTime: '2024-02-22',
     summary:
       'Learn the best practices and patterns for writing clean, maintainable TypeScript code.',
-    coverImage: '/images/blog/typescript-best-practices/cover.png'
+    coverImage: '/images/icn1.png'
   },
   {
     slug: 'building-scalable-apis',
@@ -33,7 +33,7 @@ export const POSTS: Post[] = [
     modifiedTime: '2024-01-10',
     summary:
       'Design patterns and architecture decisions for building robust, scalable APIs.',
-    coverImage: '/images/blog/building-scalable-apis/cover.png'
+    coverImage: '/images/icn1.png'
   }
 ]
 

@@ -180,12 +180,23 @@ const Page = () => {
         </section>
 
         {/* Logo Section Note */}
-        <section className='border-t pt-8'>
-          <h2 className='text-3xl font-bold mb-4'>Logo</h2>
-          <p className='text-muted-foreground'>
-            My personal logo represents my journey as a developer - constantly evolving, learning, and building.
-          </p>
-        </section>
+        <section className="border-t pt-8">
+  <h2 className="text-3xl font-bold mb-4">Logo</h2>
+  <p className="text-muted-foreground mb-6">
+    My personal logo represents my journey as a developer — constantly evolving, learning, and building.
+  </p>
+
+  <div className="flex items-center justify-center">
+    <div className="rounded-xl border p-4 bg-muted/20 shadow-sm">
+      <img
+        src="/images/icn1.png"
+        alt="Personal Logo"
+        className="h-32 w-auto object-contain"
+      />
+    </div>
+  </div>
+</section>
+
 
       </div>
     </>

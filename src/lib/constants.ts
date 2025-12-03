@@ -6,7 +6,7 @@ export const GITHUB_USERNAME = '2405gaurav'
 
 export const MY_NAME = 'Gaurav'
 
-export const SITE_GITHUB_URL = 'https://github.com/2405Gaurav'
+export const SITE_GITHUB_URL = 'https://github.com/2405Gaurav/portfolio-v2'
 export const SITE_INSTAGRAM_URL = 'https://www.instagram.com/24_gauravthakur/?hl=en'
 export const SITE_X_URL = 'https://x.com/GauravT55684844'
 export const CODO = 'https://codolio.com/profile/EREN_01'
