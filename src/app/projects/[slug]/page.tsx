@@ -5,7 +5,6 @@ import { notFound } from 'next/navigation'
 
 import BlurImage from '@/pc/blur-image'
 import JsonLd from '@/pc/json-ld'
-import Mdx from '@/pc/mdx'
 import ProjectHeader from '@/pc/project-header'
 import { MY_NAME } from '@/lib/constants'
 import { getProjectBySlug, getLatestProjects } from '@/lib/content'
