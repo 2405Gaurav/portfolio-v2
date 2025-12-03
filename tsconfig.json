@@ -1,28 +1,24 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
   "compilerOptions": {
-    "ignoreDeprecations": "6.0",
-    "target": "ES2020",
-    "lib": ["dom", "dom.iterable", "esnext"],
-    "allowJs": false,
-    "skipLibCheck": true,
-    "strict": false,
-    "forceConsistentCasingInFileNames": true,
-    "noEmit": true,
-    "esModuleInterop": true,
-    "moduleResolution": "bundler",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "jsx": "react-jsx",
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"],
-      "~/*": ["./public/*"]
-    },
-    "incremental": true,
-    "module": "esnext",
-    "plugins": [
-      { "name": "next" }
-    ]
-  }
+      "~/*": ["./public/*"],
+      "content-collections": ["./.content-collections/generated"]
+    }
+  },
+  "extends": "@nelsonlaidev/typescript-config/nextjs.json",
+  "exclude": ["node_modules"],
+  "include": [
+    "src",
+    ".next/types/**/*.ts",
+    "next-env.d.ts",
+    "postcss.config.mjs",
+    "eslint.config.ts",
+    "next.config.ts",
+    "playwright.config.ts",
+    "vitest.config.ts",
+    "global.d.ts"
+  ]
 }
