@@ -1,18 +1,26 @@
-// Inspired by: https://fig.io
 'use client'
-
 import { SiGithub, SiWakatime, SiYoutube } from '@icons-pack/react-simple-icons'
 import { Link } from '@/pc/components/link'
 import { ArrowRightIcon, PencilIcon, StarIcon } from 'lucide-react'
 import { useState, useEffect } from 'react'
-
 import Counter from '@/pc/counter'
 
 type StatData = {
-  wakatime?: { hours: number }
-  youtube?: { subscribers: number; views: number }
-  github?: { followers: number; stars: number }
-  blog?: { views: number; likes: number }
+  wakatime?: {
+    hours: number
+  }
+  youtube?: {
+    subscribers: number
+    views: number
+  }
+  github?: {
+    followers: number
+    stars: number
+  }
+  blog?: {
+    views: number
+    likes: number
+  }
 }
 
 type Card = {
@@ -30,13 +38,10 @@ type Card = {
 
 const Stats = () => {
   const [stats, setStats] = useState<StatData>({})
-  const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
     const fetchStats = async () => {
       try {
-        setIsLoading(true)
-        
         // Fetch all stats in parallel
         const [wakatimeRes, youtubeRes, githubRes, blogRes] = await Promise.allSettled([
           fetch('/api/wakatime-stats'),
@@ -66,8 +71,6 @@ const Stats = () => {
         setStats(newStats)
       } catch (error) {
         console.error('Error fetching stats:', error)
-      } finally {
-        setIsLoading(false)
       }
     }
 
@@ -79,7 +82,7 @@ const Stats = () => {
       title: 'Coding Hours',
       link: 'https://wakatime.com/@nelsonlaidev',
       value: stats.wakatime?.hours,
-      icon: <SiWakatime className='text-[#0061ff]' />,
+      icon: <SiWakatime />,
       linkText: 'WakaTime',
       gradient: {
         startColor: '#0061ff',
@@ -91,7 +94,7 @@ const Stats = () => {
       title: 'YouTube Subscribers',
       link: 'https://www.youtube.com/@nelsonlaidev',
       value: stats.youtube?.subscribers,
-      icon: <SiYoutube className='text-[#ff0000]' />,
+      icon: <SiYoutube />,
       linkText: 'YouTube',
       gradient: {
         startColor: '#ff0000',
@@ -102,7 +105,7 @@ const Stats = () => {
       title: 'YouTube Views',
       link: 'https://www.youtube.com/@nelsonlaidev',
       value: stats.youtube?.views,
-      icon: <SiYoutube className='text-[#ff0000]' />,
+      icon: <SiYoutube />,
       linkText: 'YouTube',
       gradient: {
         startColor: '#ff0000',
@@ -113,7 +116,7 @@ const Stats = () => {
       title: 'GitHub Followers',
       link: 'https://github.com/2405Gaurav',
       value: stats.github?.followers,
-      icon: <SiGithub className='text-[#fee000]' />,
+      icon: <SiGithub />,
       linkText: 'GitHub',
       gradient: {
         startColor: '#fee000',
@@ -124,7 +127,7 @@ const Stats = () => {
       title: 'GitHub Stars',
       link: 'https://github.com/nelsonlaidev',
       value: stats.github?.stars,
-      icon: <StarIcon className='size-6 text-[#fee000]' />,
+      icon: <StarIcon />,
       linkText: 'GitHub',
       gradient: {
         startColor: '#fee000',
@@ -135,7 +138,7 @@ const Stats = () => {
       title: 'Blog Total Views',
       link: 'https://nelsonlai.dev',
       value: stats.blog?.views,
-      icon: <PencilIcon className='size-6 text-[#ff0f7b]' />,
+      icon: <PencilIcon />,
       linkText: 'Blog',
       gradient: {
         startColor: '#ff0f7b',
@@ -146,7 +149,7 @@ const Stats = () => {
       title: 'Blog Total Likes',
       link: 'https://nelsonlai.dev',
       value: stats.blog?.likes,
-      icon: <PencilIcon className='size-6 text-[#ff0f7b]' />,
+      icon: <PencilIcon />,
       linkText: 'Blog',
       gradient: {
         startColor: '#ff0f7b',
@@ -156,7 +159,7 @@ const Stats = () => {
   ]
 
   return (
-    <div className='grid gap-4 sm:grid-cols-2 md:grid-cols-3'>
+    <div className='grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3'>
       {data.map((stat) => {
         const {
           icon,
@@ -171,38 +174,43 @@ const Stats = () => {
         const hasValue = value === 0 || value !== undefined
 
         return (
-          <Link
-            key={stat.title}
-            href={link}
-            className='group relative overflow-hidden rounded-lg border p-4 shadow-xs transition-colors hover:bg-zinc-100 dark:bg-zinc-900/50 dark:hover:bg-zinc-900'
+          <div
+            key={title}
+            className='group relative overflow-hidden rounded-2xl border border-gray-200 bg-white p-6 transition-all hover:shadow-lg dark:border-gray-800 dark:bg-gray-900'
           >
-            <div className='flex flex-col items-center justify-center gap-2 transition-transform group-hover:-translate-y-24 group-focus:-translate-y-24'>
-              <div className='flex items-center gap-2 text-3xl font-semibold'>
-                {hasValue ? (
-                  <>
-                    <span>{icon}</span>
-                    <div
-                      style={{
-                        background: `linear-gradient(122.25deg, ${startColor} 12.16%, ${endColor} 70.98%)`,
-                        WebkitBackgroundClip: 'text',
-                        WebkitTextFillColor: 'transparent'
-                      }}
-                    >
+            <div className='mb-4 flex items-center justify-between'>
+              {hasValue ? (
+                <>
+                  <div
+                    className='flex h-12 w-12 items-center justify-center rounded-xl text-white'
+                    style={{
+                      background: `linear-gradient(135deg, ${startColor} 0%, ${endColor} 100%)`
+                    }}
+                  >
+                    {icon}
+                  </div>
+                  <div className='text-right'>
+                    <div className='flex items-baseline gap-1 text-3xl font-bold text-gray-900 dark:text-white'>
                       <Counter value={value} />
-                      {suffix && <span>{` ${suffix}`}</span>}
+                      {suffix && <span className='text-lg text-gray-500'>{` ${suffix}`}</span>}
                     </div>
-                  </>
-                ) : (
-                  '--'
-                )}
-              </div>
-              <div className='text-xl font-medium'>{title}</div>
+                  </div>
+                </>
+              ) : (
+                <div className='text-3xl font-bold text-gray-400'>--</div>
+              )}
             </div>
-            <span className='absolute top-1/2 left-1/2 flex -translate-x-1/2 translate-y-24 items-center gap-1 text-2xl font-semibold opacity-0 transition group-hover:-translate-y-1/2 group-hover:opacity-100 group-focus:-translate-y-1/2 group-focus:opacity-100'>
+
+            <h3 className='mb-2 text-sm font-medium text-gray-600 dark:text-gray-400'>{title}</h3>
+
+            <Link
+              href={link}
+              className='inline-flex items-center gap-1 text-sm font-medium text-gray-900 transition-colors hover:text-gray-600 dark:text-white dark:hover:text-gray-300'
+            >
               {linkText}
-              <ArrowRightIcon className='size-6' />
-            </span>
-          </Link>
+              <ArrowRightIcon className='h-4 w-4 transition-transform group-hover:translate-x-1' />
+            </Link>
+          </div>
         )
       })}
     </div>
