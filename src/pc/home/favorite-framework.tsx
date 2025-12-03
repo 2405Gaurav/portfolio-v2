@@ -1,0 +1,18 @@
+import { SiNextdotjs } from '@icons-pack/react-simple-icons'
+import { HeartIcon } from 'lucide-react'
+
+const FavoriteFramework = () => {
+  return (
+    <div className='flex flex-col gap-6 rounded-xl p-4 shadow-feature-card lg:p-6'>
+      <div className='flex items-center gap-2'>
+        <HeartIcon className='size-4.5' />
+        <h2 className='text-sm'>Favorite Framework</h2>
+      </div>
+      <div className='flex items-center justify-center'>
+        <SiNextdotjs size={80} className='text-zinc-800 dark:text-zinc-200' />
+      </div>
+    </div>
+  )
+}
+
+export default FavoriteFramework
