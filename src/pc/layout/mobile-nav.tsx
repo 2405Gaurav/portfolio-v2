@@ -45,7 +45,7 @@ const MobileNav = () => {
           <DropdownMenuItem key={link.key} asChild>
             <Link href={link.href} className='flex items-center gap-4'>
               {link.icon}
-              <div>{getTranslation(link.labelKey)}</div>
+              <div>{getTranslation(link.label)}</div>
             </Link>
           </DropdownMenuItem>
         ))}
