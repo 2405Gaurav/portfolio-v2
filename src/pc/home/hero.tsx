@@ -47,10 +47,9 @@ const Hero = () => {
 
   // Hardcoded translations
   const translations = {
-    titleTop: "Hi, I'm Gaurav,a FullStack Developer ",
-    titleMiddleLeft: 'building',
-    titleMiddleRight: 'things for the web',
-    titleBottom: '',
+    titleTop: "Hi, I'm Gaurav, a FullStack",
+    titleSecond: 'Developer building',
+    titleFourth: 'things for the web',
     locationTimezone: '📍 Mohali,Punjab,India'
   }
 
@@ -103,11 +102,15 @@ const Hero = () => {
               initial={{ x: 30, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}
               transition={{ ease: 'easeOut' }}
-              className='flex flex-wrap gap-2 justify-center md:justify-start'
             >
-              <motion.div layout key='title-middle-left'>
-                {translations.titleMiddleLeft}
-              </motion.div>
+              {translations.titleSecond}
+            </motion.div>
+            <motion.div
+              initial={{ x: 40, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ ease: 'easeOut' }}
+              className='flex justify-center md:justify-start'
+            >
               <div className='relative min-w-[120px] overflow-hidden'>
                 <AnimatePresence mode='popLayout'>
                   <motion.div
@@ -127,12 +130,9 @@ const Hero = () => {
                   </motion.div>
                 </AnimatePresence>
               </div>
-              <motion.div layout key='title-middle-right'>
-                {translations.titleMiddleRight}
-              </motion.div>
             </motion.div>
-            <motion.div initial={{ x: 40, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ ease: 'easeOut' }}>
-              {translations.titleBottom}
+            <motion.div initial={{ x: 50, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ ease: 'easeOut' }}>
+              {translations.titleFourth}
             </motion.div>
           </h1>
           <motion.div
