@@ -1,28 +1,18 @@
-import { allPages, allPosts, allProjects } from 'content-collections'
+import { POSTS } from '@/constants/posts'
+import { PROJECTS } from '@/constants/projects'
 
-export const PROTECTED_ROUTES = ['/admin', '/account', '/account/settings']
-
-type GetPathnamesOptions = {
-  includeProtectedRoutes?: boolean
-}
-
-export const getPathnames = (options: GetPathnamesOptions = {}) => {
-  const { includeProtectedRoutes = false } = options
-
-  const publicRoutes = [
-    '/',
+export const getPathnames = () => {
+  return [
+    '/',  
     '/blog',
-    '/guestbook',
     '/projects',
+    '/guestbook',
     '/dashboard',
-    ...new Set(allPages.map((page) => `/${page.slug}`)),
-    ...new Set(allProjects.map((project) => `/projects/${project.slug}`)),
-    ...new Set(allPosts.map((post) => `/blog/${post.slug}`))
+
+    // Generate blog post paths
+    ...POSTS.map((post) => `/blog/${post.slug}`),
+
+    // Generate project paths
+    ...PROJECTS.map((project) => `/projects/${project.slug}`)
   ]
-
-  if (includeProtectedRoutes) {
-    return [...publicRoutes, ...PROTECTED_ROUTES]
-  }
-
-  return publicRoutes
 }
