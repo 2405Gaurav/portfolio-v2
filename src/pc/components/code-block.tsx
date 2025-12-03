@@ -1,12 +1,10 @@
 'use client'
 
-import { CheckIcon, CopyIcon } from 'lucide-react'
+import { CheckIcon, CopyIcon, CodeIcon } from 'lucide-react'
 import mergeRefs from 'merge-refs'
 import { useEffect, useRef, useState } from 'react'
 
 import { cn } from '@/lib/utils'
-import { getIconByLanguage } from '@/utils/get-icon-by-language'
-
 import { Button } from './button'
 import { ScrollArea, ScrollBar } from './scroll-area'
 
@@ -17,10 +15,12 @@ type CodeBlockProps = {
 } & React.ComponentProps<'pre'>
 
 const CodeBlock = (props: CodeBlockProps) => {
-  const { children, className, title, 'data-lang': lang, figureClassName, scrollAreaClassName, ref, ...rest } = props
+  const { children, className, title, figureClassName, scrollAreaClassName, ref, ...rest } = props
 
   const textInput = useRef<HTMLPreElement>(null)
-  const Icon = getIconByLanguage(lang ?? '')
+
+  // ⛔ removed getIconByLanguage
+  const Icon = CodeIcon
 
   const onCopy = () => {
     void navigator.clipboard.writeText(textInput.current?.textContent ?? '')
@@ -34,22 +34,22 @@ const CodeBlock = (props: CodeBlockProps) => {
       )}
     >
       {title ? (
-        <div className='flex flex-row items-center gap-2 border-b bg-muted/50 px-4 py-1.5'>
-          <div className='text-muted-foreground'>
-            <Icon className='size-3.5' />
+        <div className="flex flex-row items-center gap-2 border-b bg-muted/50 px-4 py-1.5">
+          <div className="text-muted-foreground">
+            <Icon className="size-3.5" />
           </div>
-          <figcaption className='flex-1 truncate text-muted-foreground'>{title}</figcaption>
-          <CopyButton className='-me-2' onCopy={onCopy} />
+          <figcaption className="flex-1 truncate text-muted-foreground">{title}</figcaption>
+          <CopyButton className="-me-2" onCopy={onCopy} />
         </div>
       ) : (
-        <CopyButton className='absolute top-2 right-2 z-10' onCopy={onCopy} />
+        <CopyButton className="absolute top-2 right-2 z-10" onCopy={onCopy} />
       )}
 
       <ScrollArea className={scrollAreaClassName}>
         <pre ref={mergeRefs(textInput, ref)} className={cn('p-4 text-[13px]', className)} {...rest}>
           {children}
         </pre>
-        <ScrollBar orientation='horizontal' />
+        <ScrollBar orientation="horizontal" />
       </ScrollArea>
     </figure>
   )
@@ -64,28 +64,24 @@ const CopyButton = (props: CopyButtonProps) => {
   const [isCopied, setIsCopied] = useState(false)
 
   useEffect(() => {
-    const copyResetTimeoutId = setTimeout(() => {
-      setIsCopied(false)
-    }, 2000)
-
-    return () => {
-      clearTimeout(copyResetTimeoutId)
-    }
+    if (!isCopied) return
+    const id = setTimeout(() => setIsCopied(false), 2000)
+    return () => clearTimeout(id)
   }, [isCopied])
 
   return (
     <Button
-      variant='ghost'
-      size='icon'
+      variant="ghost"
+      size="icon"
       onClick={() => {
         onCopy()
         setIsCopied(true)
       }}
-      className={cn('size-7.5 opacity-0 transition-opacity', 'group-hover:opacity-100', className)}
-      aria-label='Copy code to clipboard'
+      className={cn('size-7.5 opacity-0 transition-opacity group-hover:opacity-100', className)}
+      aria-label="Copy code to clipboard"
       {...rest}
     >
-      {isCopied ? <CheckIcon className='size-3.5' /> : <CopyIcon className='size-3.5' />}
+      {isCopied ? <CheckIcon className="size-3.5" /> : <CopyIcon className="size-3.5" />}
     </Button>
   )
 }
