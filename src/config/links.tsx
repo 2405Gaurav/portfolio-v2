@@ -1,5 +1,5 @@
-import { SiFacebook, SiGithub, SiInstagram, SiX, SiYoutube } from '@icons-pack/react-simple-icons'
-import { BarChartIcon, FlameIcon, MessageCircleIcon, MonitorIcon, PencilIcon, UserCircleIcon } from 'lucide-react'
+import {  SiGithub, SiInstagram, SiX  } from '@icons-pack/react-simple-icons'
+import { BarChartIcon, FlameIcon, MessageCircleIcon,  PencilIcon, UserCircleIcon } from 'lucide-react'
 
 import {  SITE_GITHUB_URL, SITE_INSTAGRAM_URL, SITE_X_URL,CODO } from '@/lib/constants'
 
