@@ -13,7 +13,8 @@ export const POSTS: Post[] = [
     title: 'Getting Started with Next.js 15',
     date: '2024-03-15',
     modifiedTime: '2024-03-15',
-    summary: 'A comprehensive guide to building modern web applications with Next.js 15 and the App Router.',
+    summary:
+      'A comprehensive guide to building modern web applications with Next.js 15 and the App Router.',
     coverImage: '/images/blog/getting-started-with-nextjs/cover.png'
   },
   {
@@ -21,7 +22,8 @@ export const POSTS: Post[] = [
     title: 'TypeScript Best Practices for 2024',
     date: '2024-02-20',
     modifiedTime: '2024-02-22',
-    summary: 'Learn the best practices and patterns for writing clean, maintainable TypeScript code.',
+    summary:
+      'Learn the best practices and patterns for writing clean, maintainable TypeScript code.',
     coverImage: '/images/blog/typescript-best-practices/cover.png'
   },
   {
@@ -29,19 +31,26 @@ export const POSTS: Post[] = [
     title: 'Building Scalable REST APIs',
     date: '2024-01-10',
     modifiedTime: '2024-01-10',
-    summary: 'Design patterns and architecture decisions for building robust, scalable APIs.',
+    summary:
+      'Design patterns and architecture decisions for building robust, scalable APIs.',
     coverImage: '/images/blog/building-scalable-apis/cover.png'
   }
 ]
 
-export const getLatestPosts = (limit?: number) => {
-  const sortedPosts = [...POSTS].sort(
+// -------------------------
+// SORTED POSTS (latest first)
+// -------------------------
+export const getLatestPosts = (limit?: number): Post[] => {
+  const sorted = [...POSTS].sort(
     (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
   )
-  
-  return limit ? sortedPosts.slice(0, limit) : sortedPosts
+
+  return limit ? sorted.slice(0, limit) : sorted
 }
 
-export const getPostBySlug = (slug: string) => {
-  return POSTS.find(post => post.slug === slug)
+// -------------------------
+// FIND POST BY SLUG
+// -------------------------
+export const getPostBySlug = (slug: string): Post | undefined => {
+  return POSTS.find((post) => post.slug === slug)
 }

@@ -1,22 +1,22 @@
 'use client'
 
-import { ClockIcon } from 'lucide-react'
+import { BikeIcon } from 'lucide-react'
 
-const CodingHours = () => {
-  // Hardcoded hours - update this value as needed
-  const hours = 'Continental GT 650'
+const CurrentBike = () => {
+  // Your current bike
+  const bike = 'Royal Enfiel   GT 650'
 
   return (
     <div className='flex flex-col gap-6 rounded-xl p-4 shadow-feature-card lg:p-6'>
       <div className='flex items-center gap-2'>
-        <ClockIcon className='size-4.5' />
-        <h2 className='text-sm'>Bike</h2>
+        <BikeIcon className='size-4.5' />
+        <h2 className='text-sm'>Current Bike</h2>
       </div>
       <div className='flex grow items-center justify-center text-4xl font-semibold'>
-        {hours}
+        {bike}
       </div>
     </div>
   )
 }
 
-export default CodingHours
+export default CurrentBike

@@ -6,7 +6,7 @@ import { cn } from '@/lib/utils'
 import { motion, useInView } from 'motion/react'
 import { useRef } from 'react'
 
-import CodingHours from './coding-hours'
+import CurrentBike from './coding-hours'
 import Connect from './connect'
 import FavoriteFramework from './favorite-framework'
 import LocationCard from './location-card'
@@ -75,7 +75,7 @@ const AboutMe = () => {
         <div className='grid gap-4'>
           <Connect />
           <div className='grid gap-4 [@media(min-width:450px)]:grid-cols-2'>
-            <CodingHours />
+            <CurrentBike />
             <FavoriteFramework />
           </div>
         </div>

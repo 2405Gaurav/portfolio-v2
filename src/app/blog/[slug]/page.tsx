@@ -1,81 +1,76 @@
 import type { Metadata } from 'next'
-import type { Locale } from 'next-intl'
 import type { BlogPosting, WithContext } from 'schema-dts'
 
-import { allPosts } from 'content-collections'
+import { POSTS, getPostBySlug } from '@/constants/posts'
 import { notFound } from 'next/navigation'
-import { setRequestLocale } from 'next-intl/server'
-import { Suspense, use } from 'react'
 
 import BlogFooter from '@/pc/blog/blog-footer'
 import BlogHeader from '@/pc/blog/blog-header'
 import LikeButton from '@/pc/blog/like-button'
-import MobileTableOfContents from '@/pc/blog/mobile-table-of-contents'
 import ProgressBar from '@/pc/blog/progress-bar'
-import TableOfContents from '@/pc/blog/table-of-contents'
 import CommentSection from '@/pc/comment-section'
 import JsonLd from '@/pc/json-ld'
-import Mdx from '@/pc/mdx'
 import { MY_NAME } from '@/lib/constants'
-import { getPostBySlug } from '@/lib/content'
-import { createMetadata } from '@/lib/metadata'
 import { getBaseUrl } from '@/utils/get-base-url'
-import { getLocalizedPath } from '@/utils/get-localized-path'
 
-export const generateStaticParams = (): Array<{ slug: string; locale: string }> => {
-  return allPosts.map((post) => ({
-    slug: post.slug,
-    locale: post.locale
+// ----------------------------------------
+// 1. STATIC PARAMS — BASED ON POSTS ARRAY
+// ----------------------------------------
+export const generateStaticParams = () => {
+  return POSTS.map((post) => ({
+    slug: post.slug
   }))
 }
 
-export const generateMetadata = async (props: PageProps<'/[locale]/blog/[slug]'>): Promise<Metadata> => {
-  const { params } = props
-  const { slug, locale } = await params
-
-  const post = getPostBySlug(locale, slug)
+// ----------------------------------------
+// 2. METADATA — NOW SIMPLE + STATIC
+// ----------------------------------------
+export const generateMetadata = async ({
+  params
+}: {
+  params: { slug: string }
+}): Promise<Metadata> => {
+  const { slug } = params
+  const post = getPostBySlug(slug)
 
   if (!post) return {}
 
-  return createMetadata({
-    pathname: `/blog/${slug}`,
+  return {
     title: post.title,
     description: post.summary,
-    locale,
     openGraph: {
       type: 'article',
       publishedTime: post.date,
-      modifiedTime: post.modifiedTime
+      modifiedTime: post.modifiedTime,
+      images: [
+        {
+          url: post.coverImage
+        }
+      ]
     }
-  })
+  }
 }
 
-const Page = (props: PageProps<'/[locale]/blog/[slug]'>) => {
-  const { params } = props
-  const { slug, locale } = use(params)
+// ----------------------------------------
+// 3. BLOG PAGE — NO MDX, NO TOC
+// ----------------------------------------
+export default function Page({ params }: { params: { slug: string } }) {
+  const { slug } = params
+  const post = getPostBySlug(slug)
 
-  setRequestLocale(locale as Locale)
+  if (!post) notFound()
 
-  const post = getPostBySlug(locale, slug)
-  const url = getLocalizedPath({ locale, pathname: `/blog/${slug}` })
+  const url = `/blog/${slug}`
   const baseUrl = getBaseUrl()
 
-  if (!post) {
-    notFound()
-  }
-
-  const ogImage = getLocalizedPath({ locale, pathname: `/og/blog/${post.slug}/image.webp` })
-
+  // JSON-LD (still useful)
   const jsonLd: WithContext<BlogPosting> = {
     '@context': 'https://schema.org',
     '@type': 'BlogPosting',
     headline: post.title,
     description: post.summary,
-    mainEntityOfPage: {
-      '@type': 'WebPage',
-      '@id': url
-    },
-    image: ogImage,
+    mainEntityOfPage: { '@type': 'WebPage', '@id': url },
+    image: post.coverImage,
     datePublished: post.date,
     dateModified: post.modifiedTime,
     author: {
@@ -88,7 +83,7 @@ const Page = (props: PageProps<'/[locale]/blog/[slug]'>) => {
       name: MY_NAME,
       url: baseUrl
     },
-    inLanguage: locale
+    inLanguage: 'en'
   }
 
   return (
@@ -97,27 +92,36 @@ const Page = (props: PageProps<'/[locale]/blog/[slug]'>) => {
 
       <BlogHeader post={post} />
 
-      <div className='mt-8 flex flex-col justify-between lg:flex-row'>
-        <article className='w-full lg:max-w-2xl'>
-          <Mdx code={post.code} />
+      <div className="mt-8 flex flex-col justify-between lg:flex-row">
+        {/* ARTICLE CONTENT — SINCE NO MDX, USE TITLE + SUMMARY */}
+        <article className="w-full lg:max-w-2xl space-y-6">
+          <h1 className="text-4xl font-bold">{post.title}</h1>
+
+          <p className="text-muted-foreground text-lg">{post.summary}</p>
+
+          <img
+            src={post.coverImage}
+            alt={post.title}
+            className="rounded-xl shadow"
+          />
+
+          <p className="text-sm text-zinc-500">
+            Published on {post.date}
+          </p>
         </article>
-        <aside className='w-full lg:w-68'>
-          <div className='sticky top-24'>
-            {post.toc.length > 0 && <TableOfContents toc={post.toc} />}
+
+        <aside className="w-full lg:w-68">
+          <div className="sticky top-24">
             <LikeButton slug={slug} />
           </div>
         </aside>
       </div>
+
       <ProgressBar />
 
-      {post.toc.length > 0 && <MobileTableOfContents toc={post.toc} />}
       <BlogFooter post={post} />
 
-      <Suspense>
-        <CommentSection slug={slug} />
-      </Suspense>
+      <CommentSection slug={slug} />
     </>
   )
 }
-
-export default Page

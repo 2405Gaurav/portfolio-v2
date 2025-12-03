@@ -1,31 +1,28 @@
 'use client'
 
-import type { Post } from 'content-collections'
-
-import { Link } from '@repo/ui/components/link'
-import { useLocale, useTranslations } from 'next-intl'
-
+import type { Post } from '@/constants/posts'
+import { Link } from '@/pc/components/link'
 import { useFormattedDate } from '@/hooks/use-formatted-date'
 
 type BlogFooterProps = {
   post: Post
 }
 
-const BlogFooter = (props: BlogFooterProps) => {
-  const { post } = props
-  const t = useTranslations()
-  const locale = useLocale()
-
-  const editURL = `https://github.com/nelsonlaidev/nelsonlai.dev/blob/main/apps/web/src/content/blog/${locale}/${post.slug}.mdx?plain=1`
-
+const BlogFooter = ({ post }: BlogFooterProps) => {
   const formattedDate = useFormattedDate(post.modifiedTime)
 
+  // Optional GitHub link (this is now generic — no locale)
+  const editURL = `https://github.com/yourusername/yourrepo/edit/main/content/${post.slug}.mdx`
+
   return (
-    <div className='my-8 flex w-full items-center justify-between py-4 text-sm'>
-      <Link href={editURL} variant='muted'>
-        {t('blog.footer.edit-on-github')}
+    <div className="my-8 flex w-full items-center justify-between py-4 text-sm">
+      <Link href={editURL} className="text-muted-foreground hover:underline">
+        Edit this article on GitHub
       </Link>
-      <div className='text-muted-foreground'>{t('blog.footer.last-updated', { date: formattedDate })}</div>
+
+      <div className="text-muted-foreground">
+        Last updated: {formattedDate}
+      </div>
     </div>
   )
 }

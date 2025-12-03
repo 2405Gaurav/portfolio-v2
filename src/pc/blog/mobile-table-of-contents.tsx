@@ -2,12 +2,10 @@
 
 import type { TOC } from '@/mdx-plugins'
 
-import { useRouter } from '@repo/i18n/routing'
-import { Button } from '@repo/ui/components/button'
-import { Link } from '@repo/ui/components/link'
-import { Popover, PopoverContent, PopoverTrigger } from '@repo/ui/components/popover'
+import { Button } from '@/pc/components/button'
+import { Link } from '@/pc/components/link'
+import { Popover, PopoverContent, PopoverTrigger } from '@/pc/components/popover'
 import { AlignLeftIcon } from 'lucide-react'
-import { useTranslations } from 'next-intl'
 import { useState } from 'react'
 
 type MobileTableOfContentsProps = {
@@ -17,14 +15,12 @@ type MobileTableOfContentsProps = {
 const MobileTableOfContents = (props: MobileTableOfContentsProps) => {
   const { toc } = props
   const [isOpen, setIsOpen] = useState(false)
-  const router = useRouter()
-  const t = useTranslations()
 
   return (
     <Popover open={isOpen} onOpenChange={setIsOpen}>
       <PopoverTrigger className='gap-2' asChild>
         <Button variant='secondary' className='fixed right-2 bottom-2 z-50 lg:hidden'>
-          <AlignLeftIcon /> {t('blog.on-this-page')}
+          <AlignLeftIcon /> On this page
         </Button>
       </PopoverTrigger>
       <PopoverContent align='end' side='top' className='px-0 py-2'>
@@ -40,7 +36,6 @@ const MobileTableOfContents = (props: MobileTableOfContentsProps) => {
                 paddingLeft: (depth - 1) * 16
               }}
               onClick={() => {
-                router.push(`#${url}`)
                 setIsOpen(false)
               }}
             >
