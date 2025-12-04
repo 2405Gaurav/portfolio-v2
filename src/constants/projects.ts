@@ -107,12 +107,12 @@ export const PROJECTS: Project[] = [
     name: 'OG Image Generator',
     description:
       'The OG Image Generator is a customizable design tool for creating open-graph preview images used in blogs, websites, social media posts, and SEO optimization. It leverages the Canvas API and dynamic templates to let users generate branded, visually consistent images with custom text, backgrounds, layouts, and themes. It removes the need for graphic design software, allowing creators to produce professional assets instantly.',
-    homepage: 'https://og-image-generators.vercel.app/',
-    github: 'https://github.com/2405Gaurav/OgImageGenerator',
+    homepage: 'https://g-teditor-u2jz.vercel.app/',
+    github: 'https://github.com/2405Gaurav/GTeditor',
     techstack: ['Next.js', 'Canvas API', 'TypeScript', 'Image Processing'],
     selected: false,
     dateCreated: '2024-07-22',
-    coverImage: '/images/icn1.png'
+    coverImage: '/project-image/editor.png'
   }
 ]
 
