@@ -84,7 +84,7 @@ const LayoutFooter = () => {
         <div className='flex items-center justify-between text-sm'>
           <div>&copy; {new Date().getFullYear()} Gaurav</div>
           <Link
-            href='https://nelsonlai.link/s/github-portfolio'
+            href='https://github.com/2405Gaurav/portfolio-v2'
             className='flex items-center justify-center overflow-hidden rounded-md border'
           >
             <div className='flex h-8 items-center gap-2 border-r bg-muted px-2'>
