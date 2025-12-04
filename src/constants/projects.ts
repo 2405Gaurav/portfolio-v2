@@ -22,6 +22,18 @@ export const PROJECTS: Project[] = [
     dateCreated: '2024-01-15',
     coverImage: '/project-image/ai-study.png'
   },
+ {
+  slug: 'gtools',
+  name: 'GTools – The Best Online Tools',
+  description:
+    'A powerful collection of productivity and conversion tools designed to streamline workflows, automate tasks, and boost efficiency. Built and maintained by gauravthakur.',
+  homepage: 'https://web-gtools.vercel.app/',
+  github: 'https://github.com/2405Gaurav/tools',
+  techstack: ['Next.js', 'TypeScript', 'Tailwind CSS'],
+  selected: true,
+  dateCreated: '2025-01-15',
+  coverImage: '/project-image/gtools.png'
+},
   {
     slug: 'ironpulse',
     name: 'IronPulse',
@@ -29,7 +41,7 @@ export const PROJECTS: Project[] = [
     homepage: 'https://iron-pulse-one.vercel.app/',
     github: 'https://github.com/2405Gaurav/IronPulse',
     techstack: ['React', 'Node.js', 'Fitness API', 'Tailwind CSS'],
-    selected: true,
+    selected: false,
     dateCreated: '2024-02-20',
     coverImage: '/project-image/ironpulse.png'
   },
