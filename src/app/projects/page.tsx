@@ -51,8 +51,10 @@ const Page = () => {
   return (
     <>
       <JsonLd json={jsonLd} />
-      <PageHeader title={title} description={description} />
-      <ProjectCards projects={projects} />
+      <div className='px-4 sm:px-6'>
+        <PageHeader title={title} description={description} />
+        <ProjectCards projects={projects} />
+      </div>
     </>
   )
 }
