@@ -14,7 +14,8 @@ export const PROJECTS: Project[] = [
   {
     slug: 'voicademy',
     name: 'Voicademy',
-    description: 'AI Powered Personal Assistant Learning Platform',
+    description:
+      'Voicademy is an AI-powered personal learning assistant designed to help students study smarter and learn faster. It offers voice-interactive sessions, dynamic note generation, concept explanations, and personalized learning recommendations. Built to replicate the feel of having a private tutor available 24/7, Voicademy transforms the traditional study workflow into an intelligent, adaptive experience tailored to each learner.',
     homepage: 'https://voicademy-gt.vercel.app/',
     github: 'https://github.com/2405Gaurav/Study-AI',
     techstack: ['Next.js', 'AI/ML', 'TypeScript', 'Tailwind CSS'],
@@ -22,22 +23,25 @@ export const PROJECTS: Project[] = [
     dateCreated: '2024-01-15',
     coverImage: '/project-image/ai-study.png'
   },
- {
-  slug: 'gtools',
-  name: 'GTools – The Best Online Tools',
-  description:
-    'A powerful collection of productivity and conversion tools designed to streamline workflows, automate tasks, and boost efficiency. Built and maintained by gauravthakur.',
-  homepage: 'https://web-gtools.vercel.app/',
-  github: 'https://github.com/2405Gaurav/tools',
-  techstack: ['Next.js', 'TypeScript', 'Tailwind CSS'],
-  selected: true,
-  dateCreated: '2025-01-15',
-  coverImage: '/project-image/gtools.png'
-},
+
+  {
+    slug: 'gtools',
+    name: 'GTools – The Best Online Tools',
+    description:
+      'GTools is a comprehensive suite of modern, fast, and beautifully crafted online tools built to enhance productivity. From file converters to code formatters and utility applications, every tool is designed with precision, accessibility, and performance in mind. The platform is continuously expanding and aims to serve as a one-stop destination for developers, designers, and everyday users who need reliable web-based utilities without clutter or complexity.',
+    homepage: 'https://web-gtools.vercel.app/',
+    github: 'https://github.com/2405Gaurav/tools',
+    techstack: ['Next.js', 'TypeScript', 'Tailwind CSS'],
+    selected: true,
+    dateCreated: '2025-01-15',
+    coverImage: '/project-image/gtools.png'
+  },
+
   {
     slug: 'ironpulse',
     name: 'IronPulse',
-    description: 'Your Personal Guide To Fitness and Greatness.',
+    description:
+      'IronPulse is a fitness-focused web platform that guides users on their journey toward strength and wellness. It provides curated workout routines, exercise breakdowns, tracking utilities, and motivational insights to help individuals stay consistent. With a clean UI and data-driven structure, IronPulse bridges the gap between wellness apps and real-world fitness planning, making it simple to build and maintain a personalized training routine.',
     homepage: 'https://iron-pulse-one.vercel.app/',
     github: 'https://github.com/2405Gaurav/IronPulse',
     techstack: ['React', 'Node.js', 'Fitness API', 'Tailwind CSS'],
@@ -45,10 +49,12 @@ export const PROJECTS: Project[] = [
     dateCreated: '2024-02-20',
     coverImage: '/project-image/ironpulse.png'
   },
+
   {
     slug: 'game-nation',
     name: 'Game Nation',
-    description: 'A Beautiful Game listing Platform made with GSAP.',
+    description:
+      'Game Nation is a visually immersive game discovery platform built with high-end GSAP animations and a refined UI. It showcases trending and upcoming games through cinematic transitions, dynamic previews, and smooth motion design. The goal of Game Nation is to elevate browsing into an engaging, interactive experience where users feel immersed in a digital arcade of curated game titles.',
     homepage: 'https://web-game01-nine.vercel.app/',
     github: 'https://github.com/2405Gaurav/webGame01',
     techstack: ['React', 'GSAP', 'JavaScript', 'CSS3'],
@@ -56,10 +62,12 @@ export const PROJECTS: Project[] = [
     dateCreated: '2024-03-10',
     coverImage: '/project-image/game-nation.png'
   },
+
   {
     slug: 'iste-technicia-25',
     name: "ISTE-Technicia'25",
-    description: 'Full-Stack event website with registration and payment gateway.',
+    description:
+      'ISTE-Technicia’25 is a full-stack event management platform built for a large-scale university technical festival. It features participant registration, integrated payment gateway, event schedules, notifications, and an advanced admin dashboard. Designed for real-world deployment, it streamlines festival logistics by providing organizers and attendees with a seamless, efficient, and user-friendly experience.',
     homepage: 'https://tech-25-z8qu.vercel.app/',
     github: 'https://github.com/2405Gaurav/TECH25',
     techstack: ['Next.js', 'TypeScript', 'Payment Gateway', 'PostgreSQL'],
@@ -67,10 +75,12 @@ export const PROJECTS: Project[] = [
     dateCreated: '2024-04-05',
     coverImage: '/project-image/technisia.png'
   },
+
   {
     slug: 'medrag-agent',
     name: 'MedRAG-Agent',
-    description: 'A Multi-Agent, Knowledge Graph-Enhanced RAG Framework for High-Fidelity Medical Query Resolution',
+    description:
+      'MedRAG-Agent is an advanced multi-agent, knowledge-graph-enhanced Retrieval-Augmented Generation (RAG) system engineered to deliver context-aware, medically accurate query resolution. The architecture orchestrates specialized agents for retrieval, reasoning, validation, and synthesis of clinical knowledge. It is built for high-fidelity medical information workflows such as healthcare analytics, clinical support, and biomedical research.',
     homepage: 'https://med-rag-xvoz.vercel.app/',
     github: 'https://github.com/2405Gaurav/med-RAG',
     techstack: ['Python', 'RAG', 'AI/ML', 'Knowledge Graph', 'FastAPI'],
@@ -78,27 +88,31 @@ export const PROJECTS: Project[] = [
     dateCreated: '2024-05-12',
     coverImage: '/project-image/med-RAG.png'
   },
+
   {
     slug: 'resume-editor',
     name: 'Resume Editor',
-    description: 'A resume editor tool where you can create your resume in minutes.',
+    description:
+      'Resume Editor is a powerful web application that enables users to create polished, job-ready resumes within minutes. It provides real-time preview, customizable templates, intuitive form-based editing, and instant PDF export. Designed for students and professionals alike, the tool focuses on simplicity and elegance, ensuring that anyone can produce a clean, professional resume without design experience.',
     homepage: 'https://resume-editorr.vercel.app/',
     github: 'https://github.com/2405Gaurav/ResumeEditor',
     techstack: ['React', 'JavaScript', 'PDF Generation', 'Tailwind CSS'],
     selected: false,
     dateCreated: '2024-06-18',
-    coverImage: '/project-image/ai-study.png' // Update with actual image path
+    coverImage: '/project-image/resume-editor.png'
   },
+
   {
     slug: 'og-image-generator',
     name: 'OG Image Generator',
-    description: 'An OG image generator tool where you can create OG images in minutes.',
+    description:
+      'The OG Image Generator is a customizable design tool for creating open-graph preview images used in blogs, websites, social media posts, and SEO optimization. It leverages the Canvas API and dynamic templates to let users generate branded, visually consistent images with custom text, backgrounds, layouts, and themes. It removes the need for graphic design software, allowing creators to produce professional assets instantly.',
     homepage: 'https://og-image-generators.vercel.app/',
     github: 'https://github.com/2405Gaurav/OgImageGenerator',
     techstack: ['Next.js', 'Canvas API', 'TypeScript', 'Image Processing'],
     selected: false,
     dateCreated: '2024-07-22',
-    coverImage: '/project-image/ai-study.png' // Update with actual image path
+    coverImage: '/project-image/og-generator.png'
   }
 ]
 
