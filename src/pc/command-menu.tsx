@@ -17,7 +17,6 @@ import {
   CodeIcon,
   CommandIcon,
   LinkIcon,
-  UserCircleIcon
 } from "lucide-react";
 
 type CommandAction = {
@@ -49,10 +48,7 @@ const CommandMenu = () => {
     window.open(url, "_blank", "noopener");
   };
 
-  const goToAccount = () => {
-    closeMenu();
-    window.location.href = "/account";
-  };
+ 
 
   // Keyboard shortcut CTRL/CMD + K
   const handleKeyDown = useCallback((event: KeyboardEvent) => {
@@ -73,15 +69,10 @@ const CommandMenu = () => {
       name: "General",
       actions: [
         { title: "Copy Current URL", icon: <LinkIcon />, onSelect: copyCurrentUrl },
-        { title: "View Source Code", icon: <CodeIcon />, onSelect: () => openExternalLink("https://github.com/nelsonlaidev/nelsonlai.dev") }
+        { title: "View Source Code", icon: <CodeIcon />, onSelect: () => openExternalLink("https://github.com/2405Gaurav/portfolio-v2") }
       ]
     },
-    {
-      name: "Account",
-      actions: [
-        { title: "Account Settings", icon: <UserCircleIcon />, onSelect: goToAccount }
-      ]
-    }
+    
   ];
 
   return (

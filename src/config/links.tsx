@@ -72,7 +72,6 @@ export const FOOTER_LINKS: FooterLinks = [
     id: 2,
     links: [
       { href: '/guestbook', label: 'Guestbook', labelKey: 'common.labels.guestbook' },
-      { href: '/uses', label: 'Uses', labelKey: 'common.labels.uses' },
       { href: '/projects', label: 'Projects', labelKey: 'common.labels.projects' },
     ]
   },
