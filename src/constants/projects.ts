@@ -113,6 +113,19 @@ export const PROJECTS: Project[] = [
     selected: false,
     dateCreated: '2024-07-22',
     coverImage: '/project-image/editor.png'
+  },
+
+  {
+    slug: 'resume-analyser',
+    name: 'Resume Analyser',
+    description:
+      'Resume Analyser is an intelligent AI-powered platform that evaluates resumes in real time, providing detailed feedback on structure, formatting, keyword optimization, and job-role alignment. It helps job seekers identify strengths and weaknesses using NLP-based analysis and ATS (Applicant Tracking System) simulation. Designed for professionals, students, and recruiters, it streamlines the resume review process with precision and actionable insights.',
+    homepage: 'https://g-tanalyse.vercel.app/',
+    github: 'https://github.com/2405Gaurav/GTanalyse',
+    techstack: ['Next.js', 'AI/NLP', 'TypeScript', 'Tailwind CSS'],
+    selected: false,
+    dateCreated: '2025-02-10',
+    coverImage: '/project-image/gtr.png'
   }
 ]
 
@@ -129,7 +142,7 @@ export const getProjectBySlug = (slug: string) => {
 }
 
 export const getLatestProjects = (limit?: number) => {
-  const sorted = PROJECTS.sort((a, b) => 
+  const sorted = PROJECTS.sort((a, b) =>
     new Date(b.dateCreated).getTime() - new Date(a.dateCreated).getTime()
   )
   return limit ? sorted.slice(0, limit) : sorted
