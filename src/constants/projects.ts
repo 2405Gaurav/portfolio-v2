@@ -99,7 +99,7 @@ export const PROJECTS: Project[] = [
     techstack: ['React', 'JavaScript', 'PDF Generation', 'Tailwind CSS'],
     selected: false,
     dateCreated: '2024-06-18',
-    coverImage: '/images/icn1.png'
+    coverImage: '/images/navicn.png'
   },
 
   {
