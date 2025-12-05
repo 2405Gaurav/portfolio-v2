@@ -12,6 +12,19 @@ export type Project = {
 
 export const PROJECTS: Project[] = [
   {
+    slug: 'juryx',
+    name: 'JuryX - Blockchain Hackathon Management',
+    description:
+      'JuryX is a decentralized, blockchain-powered judging and voting platform engineered to eliminate bias and ensure 100% fair, verifiable results for hackathons and competitions. Built with Solidity smart contracts for immutable scoring and a modern Next.js frontend, JuryX guarantees that once a score is locked on-chain, it cannot be altered—not even by organizers. The platform features secure judge panels with weighted metrics, real-time leaderboards, live project previews using WebContainers, and comprehensive organizer dashboards for event management. JuryX transforms traditional hackathon judging by leveraging blockchain transparency, decentralization, and cryptographic verification to create a trustless system where pure merit determines winners.',
+    homepage: 'https://gt-juryx.vercel.app/',
+    github: 'https://github.com/2405Gaurav/GT-juryx',
+    techstack: ['Next.js', 'Solidity', 'Blockchain', 'Smart Contracts', 'Web3', 'TypeScript', 'Tailwind CSS', 'IPFS'],
+    selected: true,
+    dateCreated: '2024-11-20',
+    coverImage: '/project-image/jrx.png'
+  },
+
+  {
     slug: 'voicademy',
     name: 'Voicademy',
     description:
@@ -65,9 +78,9 @@ export const PROJECTS: Project[] = [
 
   {
     slug: 'iste-technicia-25',
-    name: "ISTE-Technicia'25",
+    name: 'ISTE-Technicia 25',
     description:
-      'ISTE-Technicia’25 is a full-stack event management platform built for a large-scale university technical festival. It features participant registration, integrated payment gateway, event schedules, notifications, and an advanced admin dashboard. Designed for real-world deployment, it streamlines festival logistics by providing organizers and attendees with a seamless, efficient, and user-friendly experience.',
+      'ISTE-Technicia 25 is a full-stack event management platform built for a large-scale university technical festival. It features participant registration, integrated payment gateway, event schedules, notifications, and an advanced admin dashboard. Designed for real-world deployment, it streamlines festival logistics by providing organizers and attendees with a seamless, efficient, and user-friendly experience.',
     homepage: 'https://tech-25-z8qu.vercel.app/',
     github: 'https://github.com/2405Gaurav/TECH25',
     techstack: ['Next.js', 'TypeScript', 'Payment Gateway', 'PostgreSQL'],
