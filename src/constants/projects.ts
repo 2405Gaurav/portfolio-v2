@@ -32,7 +32,7 @@ export const PROJECTS: Project[] = [
     homepage: 'https://voicademy-gt.vercel.app/',
     github: 'https://github.com/2405Gaurav/Study-AI',
     techstack: ['Next.js', 'AI/ML', 'TypeScript', 'Tailwind CSS'],
-    selected: true,
+    selected: false,
     dateCreated: '2024-01-15',
     coverImage: '/project-image/ai-study.png'
   },
