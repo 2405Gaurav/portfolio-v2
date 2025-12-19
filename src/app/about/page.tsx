@@ -55,12 +55,18 @@ const Page = () => {
         <section>
           <h2 className='text-3xl font-bold mb-6'>WHO AM I</h2>
           <p className='text-lg leading-relaxed'>
-            I'm a Full Stack Engineer passionate about crafting exceptional web experiences. 
+            I'm an Engineer passionate about crafting exceptional web experiences. 
             Currently mastering TypeScript, Next.js, React.js, Node.js, and database management. 
             I have a deep passion for learning UI/UX design and creating seamless user experiences.
           </p>
           <p className='text-lg leading-relaxed mt-4'>
-            I started my web development journey on <span className='font-semibold'>December 5, 2020</span>. 
+            As an eager engineer, I believe in learning every approach that solves real-world problems. 
+            Whether it's building microservices with <span className='font-semibold'>Spring Boot</span>, 
+            creating AI solutions with <span className='font-semibold'>Python and LangChain</span>, 
+            or exploring any technology that drives innovation — I'm always ready to dive in and master it.
+          </p>
+          <p className='text-lg leading-relaxed mt-4'>
+            I started my web development journey on <span className='font-semibold'> 2024</span>. 
             It's been an incredible challenge, and I'm completely self-taught through YouTube and hands-on projects. 
             One of my favorite resources has been{' '}
             <Link 
@@ -70,6 +76,25 @@ const Page = () => {
               The Net Ninja
             </Link>
             , where I learned a lot of fundamental web development skills.
+          </p>
+          <p className='text-lg leading-relaxed mt-4'>
+            Beyond web development, I'm deeply passionate about problem-solving. 
+            I've solved <span className='font-semibold'>500+ coding problems</span> across platforms like LeetCode, 
+            GeeksforGeeks, and others. Check out my coding journey on{' '}
+            <Link 
+              href='https://codolio.com/profile/EREN_01' 
+              className='text-emerald-500 hover:text-emerald-600 transition-colors'
+            >
+              Codolio
+            </Link>
+            .
+          </p>
+          <p className='text-lg leading-relaxed mt-4'>
+            Currently expanding my horizons into <span className='font-semibold'>DevOps and GenAI</span>. 
+            I'm fascinated by how Docker and Kubernetes orchestrate the infrastructure that powers today's internet. 
+            <span className='italic block mt-2 text-muted-foreground'>
+              "The best way to predict the future is to build it."
+            </span>
           </p>
           <p className='text-lg leading-relaxed mt-4'>
             I love using{' '}
@@ -117,34 +142,9 @@ const Page = () => {
                 Vercel
               </Link>
             </li>
-            <li>
-              <span className='font-semibold'>Code Repository:</span>{' '}
-              <Link href={SITE_GITHUB_URL} className='text-purple-500 hover:text-purple-600 transition-colors'>
-                GitHub
-              </Link>
-            </li>
           </ul>
           <p className='text-sm text-muted-foreground mt-6 italic'>
             Note: My code isn't like the starter code because I changed a lot of code to make it truly mine! 😊
-          </p>
-        </section>
-
-        {/* Inspiration Section */}
-        <section>
-          <h2 className='text-3xl font-bold mb-6'>Inspiration</h2>
-          <p className='text-lg leading-relaxed'>
-            Here are some websites and developers that inspired me a lot to build this fantastic portfolio. 
-            Their creativity and attention to detail motivated me to push my boundaries and create something unique.
-          </p>
-          <p className='mt-4'>
-            <span className='text-muted-foreground'>Refer to </span>
-            <Link 
-              href='https://github.com/2405Gaurav' 
-              className='text-red-500 hover:text-red-600 transition-colors font-semibold'
-            >
-              README
-            </Link>
-            <span className='text-muted-foreground'> for more details on inspirations and credits.</span>
           </p>
         </section>
 
@@ -176,27 +176,34 @@ const Page = () => {
                 X (Twitter)
               </Link>
             </li>
+            <li>
+              <Link 
+                href='https://codolio.com/profile/EREN_01' 
+                className='text-emerald-500 hover:text-emerald-600 transition-colors font-medium'
+              >
+                Codolio
+              </Link>
+            </li>
           </ul>
         </section>
 
         {/* Logo Section Note */}
         <section className="border-t pt-8">
-  <h2 className="text-3xl font-bold mb-4">Logo</h2>
-  <p className="text-muted-foreground mb-6">
-    My personal logo represents my journey as a developer — constantly evolving, learning, and building.
-  </p>
+          <h2 className="text-3xl font-bold mb-4">Logo</h2>
+          <p className="text-muted-foreground mb-6">
+            My personal logo represents my journey as a developer — constantly evolving, learning, and building.
+          </p>
 
-  <div className="flex items-center justify-center">
-    <div className="rounded-xl border p-4 bg-muted/20 shadow-sm">
-      <img
-        src="/images/icn1.png"
-        alt="Personal Logo"
-        className="h-32 w-auto object-contain"
-      />
-    </div>
-  </div>
-</section>
-
+          <div className="flex items-center justify-center">
+            <div className="rounded-xl border p-4 bg-muted/20 shadow-sm">
+              <img
+                src="/images/icn1.png"
+                alt="Personal Logo"
+                className="h-32 w-auto object-contain"
+              />
+            </div>
+          </div>
+        </section>
 
       </div>
     </>
