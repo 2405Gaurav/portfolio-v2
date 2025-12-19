@@ -18,7 +18,7 @@ export const PROJECTS: Project[] = [
       'JuryX is a decentralized, blockchain-powered judging and voting platform engineered to eliminate bias and ensure 100% fair, verifiable results for hackathons and competitions. Built with Solidity smart contracts for immutable scoring and a modern Next.js frontend, JuryX guarantees that once a score is locked on-chain, it cannot be altered—not even by organizers. The platform features secure judge panels with weighted metrics, real-time leaderboards, live project previews using WebContainers, and comprehensive organizer dashboards for event management. JuryX transforms traditional hackathon judging by leveraging blockchain transparency, decentralization, and cryptographic verification to create a trustless system where pure merit determines winners.',
     homepage: 'https://gt-juryx.vercel.app/',
     github: 'https://github.com/2405Gaurav/GT-juryx',
-    techstack: ['Next.js', 'Solidity', 'Blockchain', 'Smart Contracts', 'Web3', 'TypeScript', 'Tailwind CSS', 'IPFS'],
+    techstack: ['Next.js', 'Solidity', 'Blockchain', 'TypeScript', 'Tailwind CSS', 'IPFS','Docker','AWS'],
     selected: true,
     dateCreated: '2024-11-20',
     coverImage: '/project-image/jrx.png'
@@ -75,18 +75,42 @@ export const PROJECTS: Project[] = [
     dateCreated: '2024-03-10',
     coverImage: '/project-image/game-nation.png'
   },
+  {
+    slug: 'Sweetshop(Springboot)',
+    name: 'Sweetshop(Springboot)',
+    description:
+      'Sweetshop(Springboot) is a full-stack web application built with Spring Boot and Next.js, designed for managing and showcasing sweet treats. It features a clean UI, product listings, and an intuitive admin panel for managing inventory and orders.',
+    homepage: 'https://incubyte-sweet.thegauravthakur.in/',
+    github: 'https://github.com/2405Gaurav/golden-rush',
+    techstack: ['Next.js', 'Spring Boot', 'JavaScript', 'CSS3','railways','vercel','postgresSQL'],
+    selected: false,
+    dateCreated: '2024-03-10',
+    coverImage: '/project-image/springboot.png'
+  },
 
   {
     slug: 'iste-technicia-25',
     name: 'ISTE-Technicia 25',
     description:
-      'ISTE-Technicia 25 is a full-stack event management platform built for a large-scale university technical festival. It features participant registration, integrated payment gateway, event schedules, notifications, and an advanced admin dashboard. Designed for real-world deployment, it streamlines festival logistics by providing organizers and attendees with a seamless, efficient, and user-friendly experience.',
-    homepage: 'https://tech-25-z8qu.vercel.app/',
+      'ISTE-Technicia’25 is a full-stack event management platform developed for a large-scale university technical festival, enabling 5,000–6,000+ participant registrations from across India.The platform supports end-to-end workflows including participant onboarding, secure payment gateway integration, dynamic event scheduling, and automated notifications using NodeMailer for registration confirmations and updates.It also features an advanced admin dashboard for real-time monitoring, data management, and operational control, ensuring scalable, reliable, and production-ready deployment for real-world festival logistics.',
+    homepage: 'https://technicia25.thegauravthakur.in/',
     github: 'https://github.com/2405Gaurav/TECH25',
-    techstack: ['Next.js', 'TypeScript', 'Payment Gateway', 'PostgreSQL'],
+    techstack: ['Next.js', 'TypeScript', 'Payment Gateway', 'MongoDB', 'Tailwind CSS','Nodemailer','Express.js'],
     selected: false,
     dateCreated: '2024-04-05',
     coverImage: '/project-image/technisia.png'
+  },
+  {
+    slug: 'pdf-parser',
+    name: 'PDF Parser',
+    description:
+      'PDF Parser is a robust tool designed to extract and analyze text from PDF documents, offering features like text extraction, metadata retrieval, and structured data output. It supports various PDF formats and provides a clean API for developers to integrate into their applications.',
+    homepage: 'https://pdf-parser.vercel.app/',
+    github: 'https://github.com/2405Gaurav/pdf-parser',
+    techstack: ['React.js', 'JavaScript', 'Docker', 'Qdrant(VectorDB)', 'Embedding','Node.js','Express.js'],
+    selected: false,
+    dateCreated: '2024-04-05',
+    coverImage: '/project-image/pdf.png'
   },
 
   {
@@ -126,6 +150,18 @@ export const PROJECTS: Project[] = [
     selected: false,
     dateCreated: '2024-07-22',
     coverImage: '/project-image/editor.png'
+  },
+  {
+    slug: 'GT-Sweets',
+    name: 'GT-Sweets',
+    description:
+      'GT-Sweets is a modern, responsive web application designed for managing and showcasing sweet treats. It features a clean UI, product listings, and an intuitive admin panel for managing inventory and orders.',
+    homepage: 'https://incubyte-sweet.thegauravthakur.in/',
+    github: 'https://github.com/2405Gaurav/GT-TDD-sweets-incobyte-hiring',
+    techstack: ['React.js', 'Node.js', 'TypeScript', 'TDD-Kata','Tailwind CSS'],
+    selected: false,
+    dateCreated: '2024-07-22',
+    coverImage: '/project-image/gtsweets.png'
   },
 
   {
