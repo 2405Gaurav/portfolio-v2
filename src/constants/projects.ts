@@ -16,7 +16,7 @@ export const PROJECTS: Project[] = [
     name: 'JuryX - Blockchain Hackathon Management',
     description:
       'JuryX is a decentralized, blockchain-powered judging and voting platform engineered to eliminate bias and ensure 100% fair, verifiable results for hackathons and competitions. Built with Solidity smart contracts for immutable scoring and a modern Next.js frontend, JuryX guarantees that once a score is locked on-chain, it cannot be altered—not even by organizers. The platform features secure judge panels with weighted metrics, real-time leaderboards, live project previews using WebContainers, and comprehensive organizer dashboards for event management. JuryX transforms traditional hackathon judging by leveraging blockchain transparency, decentralization, and cryptographic verification to create a trustless system where pure merit determines winners.',
-    homepage: 'https://gt-juryx.vercel.app/',
+    homepage: 'https://gt-juryx.thegauravthakur.in/',
     github: 'https://github.com/2405Gaurav/GT-juryx',
     techstack: ['Next.js', 'Solidity', 'Blockchain', 'TypeScript', 'Tailwind CSS', 'IPFS','Docker','AWS'],
     selected: true,
@@ -29,9 +29,9 @@ export const PROJECTS: Project[] = [
     name: 'Voicademy',
     description:
       'Voicademy is an AI-powered personal learning assistant designed to help students study smarter and learn faster. It offers voice-interactive sessions, dynamic note generation, concept explanations, and personalized learning recommendations. Built to replicate the feel of having a private tutor available 24/7, Voicademy transforms the traditional study workflow into an intelligent, adaptive experience tailored to each learner.',
-    homepage: 'https://voicademy-gt.vercel.app/',
+    homepage: 'https://voicademy.thegauravthakur.in/',
     github: 'https://github.com/2405Gaurav/Study-AI',
-    techstack: ['Next.js', 'AI/ML', 'TypeScript', 'Tailwind CSS'],
+    techstack: ['Next.js', 'AI/ML', 'TypeScript', 'Tailwind CSS','Vapi','Supabase','Clerk'],
     selected: false,
     dateCreated: '2024-01-15',
     coverImage: '/project-image/ai-study.png'
@@ -112,13 +112,37 @@ export const PROJECTS: Project[] = [
     dateCreated: '2024-04-05',
     coverImage: '/project-image/pdf.png'
   },
+ 
+  {
+    slug: 'GT-OS',
+    name: 'GT-OS',
+    description:
+      'GT-OS is a 32-bit x86 operating system kernel built from scratch, featuring preemptive multitasking, virtual memory management, a modular monolithic architecture, and low-level hardware drivers to explore OS internals and kernel design.',
+    homepage: 'https://github.com/2405Gaurav/GT-OS',
+    github: 'https://github.com/2405Gaurav/GT-OS',
+    techstack: [ 'C',
+    'x86 Assembly',
+    'Operating Systems',
+    'Kernel Development',
+    'Protected Mode',
+    'Virtual Memory',
+    'VFS',
+    'ext2 File System',
+    'ELF Loader',
+    'QEMU',
+    'GNU Toolchain'],
+    selected: false,
+    dateCreated: '2024-04-05',
+    coverImage: '/project-image/GTOS.png'
+  },
+ 
 
   {
     slug: 'medrag-agent',
     name: 'MedRAG-Agent',
     description:
       'MedRAG-Agent is an advanced multi-agent, knowledge-graph-enhanced Retrieval-Augmented Generation (RAG) system engineered to deliver context-aware, medically accurate query resolution. The architecture orchestrates specialized agents for retrieval, reasoning, validation, and synthesis of clinical knowledge. It is built for high-fidelity medical information workflows such as healthcare analytics, clinical support, and biomedical research.',
-    homepage: 'https://med-rag-xvoz.vercel.app/',
+    homepage: 'https://medical-assistant.thegauravthakur.in/',
     github: 'https://github.com/2405Gaurav/med-RAG',
     techstack: ['Python', 'RAG', 'AI/ML', 'Knowledge Graph', 'FastAPI'],
     selected: false,
