@@ -31,6 +31,7 @@ export default function Page() {
       <Hero />
       <SelectedProjects projects={projects} />
       <AboutMe />
+
       <LatestArticles posts={posts} />
       <GetInTouch />
     </>
