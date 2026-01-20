@@ -82,8 +82,10 @@ const AboutMe = () => {
           </div>
         </div>
       </motion.div>
-      
+      <div className='py-3'>
+        
             <GithubContributionsBox/>
+      </div>
       <div className='my-8 flex items-center justify-center'>
         <Link href='/about' className={cn(buttonVariants({ variant: 'outline' }), 'rounded-xl')}>
           Learn More About Me
