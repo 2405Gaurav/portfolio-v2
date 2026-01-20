@@ -11,7 +11,7 @@ import Connect from './connect'
 import FavoriteFramework from './favorite-framework'
 import LocationCard from './location-card'
 import StacksCard from './stacks-card'
-// Ensure this path is correct based on where you saved the file above
+
 import GithubContributionsBox from "../components/githubcontri"
 
 const variants = {
@@ -56,7 +56,6 @@ const AboutMe = () => {
       >
         About Me
       </motion.h2>
-
       <motion.div
         className='mt-12 grid gap-4 md:grid-cols-2'
         initial={{
@@ -84,11 +83,7 @@ const AboutMe = () => {
         </div>
       </motion.div>
       
-      {/* Added margin-top (mt-4) to separate it from the grid above */}
-      <div className="mt-4">
-        <GithubContributionsBox/>
-      </div>
-
+            <GithubContributionsBox/>
       <div className='my-8 flex items-center justify-center'>
         <Link href='/about' className={cn(buttonVariants({ variant: 'outline' }), 'rounded-xl')}>
           Learn More About Me

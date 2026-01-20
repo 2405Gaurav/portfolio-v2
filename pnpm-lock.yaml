@@ -215,6 +215,9 @@ importers:
       react:
         specifier: 19.2.0
         version: 19.2.0
+      react-calendar-heatmap:
+        specifier: ^1.10.0
+        version: 1.10.0(react@19.2.0)
       react-day-picker:
         specifier: ^9.11.3
         version: 9.11.3(react@19.2.0)
@@ -309,6 +312,9 @@ importers:
       '@types/react':
         specifier: 19.0.2
         version: 19.0.2
+      '@types/react-calendar-heatmap':
+        specifier: ^1.9.0
+        version: 1.9.0
       '@types/react-dom':
         specifier: 19.0.2
         version: 19.0.2(@types/react@19.0.2)
@@ -2435,6 +2441,9 @@ packages:
     resolution: {integrity: sha512-W/F7myqejNGhK9mkm1u0rZeS4wzRFTwo0ifUv1XKokYN67oRyTucH6R1ttdL95bXD1UJKD/zq5QNlg3vYgfjDg==}
     deprecated: This is a stub types definition. postcss-load-config provides its own type definitions, so you do not need this installed.
 
+  '@types/react-calendar-heatmap@1.9.0':
+    resolution: {integrity: sha512-BH8M/nsXoLGa3hxWbrq3guPwlK0cV+w1i4c/ktrTxTzN5fBths6WbeUZ4dK0+tE76qiGoVSo9Tse8WVVuMIV+w==}
+
   '@types/react-dom@19.0.2':
     resolution: {integrity: sha512-c1s+7TKFaDRRxr1TxccIX2u7sfCnc3RxkVyBIUA2lCpyqCF+QoAwQ/CBg7bsMdVwP120HEH143VQezKtef5nCg==}
     peerDependencies:
@@ -4518,6 +4527,9 @@ packages:
     peerDependencies:
       esbuild: 0.*
 
+  memoize-one@5.2.1:
+    resolution: {integrity: sha512-zYiwtZUcYyXKo/np96AGZAckk+FWWsUdJ3cHGGmld7+AhvcWmQyGCYUh1hc4Q/pkOhb65dQR/pqCyK0cOaHz4Q==}
+
   merge-refs@2.0.0:
     resolution: {integrity: sha512-3+B21mYK2IqUWnd2EivABLT7ueDhb0b8/dGK8LoFQPrU61YITeCMn14F7y7qZafWNZhUEKb24cJdiT5Wxs3prg==}
     peerDependencies:
@@ -5025,6 +5037,11 @@ packages:
 
   randombytes@2.1.0:
     resolution: {integrity: sha512-vYl3iOX+4CKUWuxGi9Ukhie6fsqXqS9FE2Zaic4tNFD2N2QQaXOMFbuKK4QmDHC0JO6B1Zp41J0LpT0oR68amQ==}
+
+  react-calendar-heatmap@1.10.0:
+    resolution: {integrity: sha512-e5vcrzMWzKIF710egr1FpjWyuDEFeZm39nvV25muc8Wtqqi8iDOfqREELeQ9Wouqf9hhj939gq0i+iAxo7KdSw==}
+    peerDependencies:
+      react: '>=0.14.0'
 
   react-day-picker@9.11.3:
     resolution: {integrity: sha512-7lD12UvGbkyXqgzbYIGQTbl+x29B9bAf+k0pP5Dcs1evfpKk6zv4EdH/edNc8NxcmCiTNXr2HIYPrSZ3XvmVBg==}
@@ -8498,6 +8515,10 @@ snapshots:
       - tsx
       - yaml
 
+  '@types/react-calendar-heatmap@1.9.0':
+    dependencies:
+      '@types/react': 19.0.2
+
   '@types/react-dom@19.0.2(@types/react@19.0.2)':
     dependencies:
       '@types/react': 19.0.2
@@ -11126,6 +11147,8 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
+  memoize-one@5.2.1: {}
+
   merge-refs@2.0.0(@types/react@19.0.2):
     optionalDependencies:
       '@types/react': 19.0.2
@@ -11754,6 +11777,12 @@ snapshots:
   randombytes@2.1.0:
     dependencies:
       safe-buffer: 5.2.1
+
+  react-calendar-heatmap@1.10.0(react@19.2.0):
+    dependencies:
+      memoize-one: 5.2.1
+      prop-types: 15.8.1
+      react: 19.2.0
 
   react-day-picker@9.11.3(react@19.2.0):
     dependencies:
