@@ -81,6 +81,7 @@
     "posthog-js": "1.281.0",
     "posthog-node": "5.10.4",
     "react": "19.2.0",
+    "react-calendar-heatmap": "^1.10.0",
     "react-day-picker": "^9.11.3",
     "react-dom": "19.2.0",
     "react-intersection-observer": "10.0.0",
