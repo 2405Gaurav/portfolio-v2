@@ -50,9 +50,9 @@ export default function GithubContributionsBox() {
   const oneYearAgo = new Date()
   oneYearAgo.setFullYear(today.getFullYear() - 1)
 
-  // Safe array access to prevent "Object is possibly undefined"
-  const startDate = (values && values.length > 0) ? values[0].date : oneYearAgo
-  const endDate = (values && values.length > 0) ? values[values.length - 1].date : today
+  // Fixed: Safe array access with optional chaining
+  const startDate = values[0]?.date ?? oneYearAgo
+  const endDate = values[values.length - 1]?.date ?? today
 
   return (
     <div className='flex flex-col gap-6 rounded-xl p-4 shadow-feature-card lg:p-6 border border-zinc-800 bg-zinc-900/50'>
@@ -82,13 +82,12 @@ export default function GithubContributionsBox() {
             showWeekdayLabels={false}
             showMonthLabels={true}
             gutterSize={2}
-            // Use 'any' for the callback signatures to satisfy the library's strict types
-            // while allowing us to manipulate the element freely.
-            transformDayElement={(element: any, value: any, index: number) => {
+            // Fixed: Removed unused parameters
+            transformDayElement={(element: any) => {
               return React.cloneElement(element, {
                 rx: 2,
                 ry: 2,
-              } as any) // Cast props to any to allow SVG-specific props like rx/ry
+              } as any)
             }}
             classForValue={(value: any) => {
               if (!value || !value.count) return 'color-empty'
@@ -97,10 +96,11 @@ export default function GithubContributionsBox() {
               if (value.count < 10) return 'color-scale-3'
               return 'color-scale-4'
             }}
+            // Fixed: Using type assertion to satisfy TooltipDataAttrs
             tooltipDataAttrs={(value: any) => {
               return {
                 'data-tip': value?.date ? `${value.date}: ${value.count || 0} contributions` : ''
-              }
+              } as any
             }}
           />
         )}
