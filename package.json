@@ -17,6 +17,7 @@
     "@aws-sdk/s3-request-presigner": "3.919.0",
     "@content-collections/mdx": "^0.2.2",
     "@fastify/deepmerge": "3.1.0",
+    "@google/generative-ai": "^0.24.1",
     "@icons-pack/react-simple-icons": "13.8.0",
     "@number-flow/react": "0.5.10",
     "@octokit/rest": "22.0.0",
