@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react'
 
 import BlurImage from '@/pc/blur-image'
 import { MY_NAME } from '@/lib/constants'
+import ChatBox from '@/pc/components/ChatBox'
 
 const TEXTS = [
   {
@@ -50,7 +51,6 @@ const Hero = () => {
     titleTop: "Hi, I'm Gaurav, a FullStack",
     titleSecond: 'Developer building',
     titleFourth: 'things for the web',
-    locationTimezone: '📍 Mohali,Punjab,India'
   }
 
   useEffect(() => {
@@ -134,6 +134,7 @@ const Hero = () => {
             <motion.div initial={{ x: 50, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ ease: 'easeOut' }}>
               {translations.titleFourth}
             </motion.div>
+            <ChatBox />
           </h1>
           <motion.div
             initial={{ x: 50, opacity: 0 }}
@@ -141,7 +142,6 @@ const Hero = () => {
             transition={{ ease: 'easeOut' }}
             className='text-sm text-muted-foreground'
           >
-            {translations.locationTimezone}
           </motion.div>
         </div>
         
