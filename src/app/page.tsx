@@ -4,7 +4,7 @@ import Hero from "@/pc/home/hero";
 import SelectedProjects from "@/pc/home/selected-projects";
 import AboutMe from "@/pc/home/about-me";
 import LatestArticles from "@/pc/home/latest-articles";
-import GetInTouch from "@/pc/home/get-in-touch";
+import GetInTouchWithForm from "@/pc/home/get-in-touch";
 
 import { getSelectedProjects } from "@/constants/projects";
 import { getLatestPosts } from "@/constants/posts";
@@ -33,7 +33,8 @@ export default function Page() {
       <AboutMe />
 
       <LatestArticles posts={posts} />
-      <GetInTouch />
+      <GetInTouchWithForm />
+      
     </>
   );
 }
