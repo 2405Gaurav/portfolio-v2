@@ -37,7 +37,7 @@ const GetInTouch = () => {
     setStatus('Sending...')
 
     try {
-      const res = await fetch('/api/contact', {
+      const res = await fetch('/api/contact-mail', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -48,13 +48,13 @@ const GetInTouch = () => {
       const data = await res.json()
 
       if (data.success) {
-        setStatus('Message sent successfully ✅')
+        setStatus('Message sent successfully')
         setForm({ name: '', email: '', message: '' })
       } else {
-        setStatus('Failed to send message ❌')
+        setStatus('Failed to send message')
       }
     } catch (error) {
-      setStatus('Something went wrong ❌')
+      setStatus('Something went wrong')
     } finally {
       setIsSubmitting(false)
     }
@@ -85,7 +85,7 @@ const GetInTouch = () => {
 
   // Hardcoded translations
   const translations = {
-    imageAlt: 'Nelson Lai avatar',
+    imageAlt: 'Gaurav Thakur',
     title: 'Get in Touch',
     description: "I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision."
   }
