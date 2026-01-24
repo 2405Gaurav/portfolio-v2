@@ -2,13 +2,13 @@
 import { NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
 
-export async function POST(req:any){
+export async function POST(req:Request){
 
 
     try{
         const {email,name,message}=await req.json();
         const transporter=nodemailer.createTransport({
-            service:'gamil',
+            service:'gmail',
             auth:{
                 user:process.env.MAIL_USER,
                 pass:process.env.MAIL_PASS  
