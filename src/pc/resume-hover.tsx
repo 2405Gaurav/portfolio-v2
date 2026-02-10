@@ -16,7 +16,7 @@ export default function ResumeButton() {
     document.body.removeChild(link);
   };
 
-  const handleMouseMove = (e) => {
+  const handleMouseMove = (e:any) => {
     setMousePos({
       x: e.clientX,
       y: e.clientY,
