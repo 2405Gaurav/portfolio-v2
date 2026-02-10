@@ -4,10 +4,10 @@ import { useState } from 'react';
 
 export default function ResumeButton() {
   const [isHovered, setIsHovered] = useState(false);
+  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
 
   const handleDownload = () => {
-    // Corrected resume URL - use forward slashes and /public directory
-    const resumeUrl = '/resume_GT.pdf'; // Place your PDF in the public folder
+    const resumeUrl = '/resume_GT.pdf';
     const link = document.createElement('a');
     link.href = resumeUrl;
     link.download = 'resume_GT.pdf';
@@ -16,12 +16,20 @@ export default function ResumeButton() {
     document.body.removeChild(link);
   };
 
+  const handleMouseMove = (e) => {
+    setMousePos({
+      x: e.clientX,
+      y: e.clientY,
+    });
+  };
+
   return (
-    <div className="relative inline-block">
+    <div className="inline-block">
       <button
         onClick={handleDownload}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
+        onMouseMove={handleMouseMove}
         className="flex items-center gap-2 px-5 py-2.5 bg-transparent border border-gray-600 rounded-full text-white text-sm hover:border-gray-400 transition-all duration-300"
       >
         <svg
@@ -41,16 +49,17 @@ export default function ResumeButton() {
         Resume
       </button>
 
-      {/* Tooltip */}
-      <div
-        className={`absolute left-0 top-full mt-2 px-4 py-2  rounded-lg text-white text-sm whitespace-nowrap transition-all duration-300 ${
-          isHovered
-            ? 'opacity-100 translate-y-0 visible'
-            : 'opacity-0 -translate-y-2 invisible'
-        }`}
-      >
-        Hire me 😊
-      </div>
+      {isHovered && (
+       <div
+  className="fixed flex items-center justify-center w-20 h-8 border border-white/20 bg-black/70 text-white text-xs rounded-sm pointer-events-none transition-opacity duration-150"
+  style={{
+    left: mousePos.x + 10,
+    top: mousePos.y + 10,
+  }}
+>
+  Hire Me!!  🫡
+</div>
+      )}
     </div>
   );
 }
