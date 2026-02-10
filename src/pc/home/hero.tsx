@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react'
 import BlurImage from '@/pc/blur-image'
 import { MY_NAME } from '@/lib/constants'
 import ChatBox from '@/pc/components/ChatBox'
+import ResumeButton from '@/pc/resume-hover'
 
 const TEXTS = [
   {
@@ -134,8 +135,15 @@ const Hero = () => {
             <motion.div initial={{ x: 50, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ ease: 'easeOut' }}>
               {translations.titleFourth}
             </motion.div>
-            <ChatBox />
+
+
           </h1>
+            <div className='left-1'>
+              <div className="flex items-center justify-center gap-2 mt-3">
+                <ChatBox />
+                <ResumeButton />
+              </div>
+            </div>
           <motion.div
             initial={{ x: 50, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
@@ -144,7 +152,7 @@ const Hero = () => {
           >
           </motion.div>
         </div>
-        
+
         {/* Desktop: Image on the right side */}
         <motion.div
           className='relative hidden size-56 md:block'

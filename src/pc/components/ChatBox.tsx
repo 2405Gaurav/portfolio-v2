@@ -90,35 +90,33 @@ export default function ChatBox() {
   };
 
   return (
-    <div className="flex flex-row sm:gap-2 gap-4 mt-6 pl-0 flex-wrap relative z-40">
-      <button
-        className="group relative inline-flex items-center justify-center whitespace-nowrap text-base font-medium transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-zinc-700/50 hover:border-blue-400/50 cursor-pointer h-12 px-6 rounded-xl bg-zinc-900/50 backdrop-blur-sm hover:bg-zinc-800/80 hover:shadow-[0_0_20px_rgba(59,130,246,0.15)] transform hover:scale-[1.02] active:scale-[0.98]"
-        aria-label="Chat with me"
-        onClick={() => setShow((s) => !s)}
+    <div className="flex flex-row sm:gap-2 gap-4  pl-0 flex-wrap relative z-40">
+    <button
+      onClick={() => setShow((s) => !s)}
+      className="flex items-center gap-2 px-5 py-2.5 bg-transparent border border-gray-600 rounded-full text-white text-sm hover:border-gray-400 transition-all duration-300"
+      aria-label="Chat with me"
+    >
+      <svg
+        className="w-4 h-4"
+        viewBox="0 0 512 512"
+        fill="currentColor"
+        stroke="currentColor"
+        strokeWidth="0"
+        xmlns="http://www.w3.org/2000/svg"
       >
-        <svg
-          className="pointer-events-none size-6 shrink-0 mr-3 transition-transform group-hover:rotate-12 text-blue-400"
-          viewBox="0 0 512 512"
-          fill="currentColor"
-          stroke="currentColor"
-          strokeWidth="0"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            fill="none"
-            strokeLinecap="round"
-            strokeMiterlimit="10"
-            strokeWidth="32"
-            d="M87.48 380c1.2-4.38-1.43-10.47-3.94-14.86a42.63 42.63 0 0 0-2.54-3.8 199.81 199.81 0 0 1-33-110C47.64 139.09 140.72 48 255.82 48 356.2 48 440 117.54 459.57 209.85a199 199 0 0 1 4.43 41.64c0 112.41-89.49 204.93-204.59 204.93-18.31 0-43-4.6-56.47-8.37s-26.92-8.77-30.39-10.11a31.14 31.14 0 0 0-11.13-2.07 30.7 30.7 0 0 0-12.08 2.43L81.5 462.78a15.92 15.92 0 0 1-4.66 1.22 9.61 9.61 0 0 1-9.41-9.74 15.85 15.85 0 0 1 .6-3.29z"
-          />
-          <circle cx="160" cy="256" r="32" />
-          <circle cx="256" cy="256" r="32" />
-          <circle cx="352" cy="256" r="32" />
-        </svg>
-        <span className="text-gray-200 group-hover:text-blue-400 transition-colors">
-          Chat with me
-        </span>
-      </button>
+        <path
+          fill="none"
+          strokeLinecap="round"
+          strokeMiterlimit="10"
+          strokeWidth="32"
+          d="M87.48 380c1.2-4.38-1.43-10.47-3.94-14.86a42.63 42.63 0 0 0-2.54-3.8 199.81 199.81 0 0 1-33-110C47.64 139.09 140.72 48 255.82 48 356.2 48 440 117.54 459.57 209.85a199 199 0 0 1 4.43 41.64c0 112.41-89.49 204.93-204.59 204.93-18.31 0-43-4.6-56.47-8.37s-26.92-8.77-30.39-10.11a31.14 31.14 0 0 0-11.13-2.07 30.7 30.7 0 0 0-12.08 2.43L81.5 462.78a15.92 15.92 0 0 1-4.66 1.22 9.61 9.61 0 0 1-9.41-9.74 15.85 15.85 0 0 1 .6-3.29z"
+        />
+        <circle cx="160" cy="256" r="32" />
+        <circle cx="256" cy="256" r="32" />
+        <circle cx="352" cy="256" r="32" />
+      </svg>
+      Chat with me
+    </button>
 
       <button
         className="items-center justify-center whitespace-nowrap text-[0.55rem] font-medium transition-all duration-300 focus-visible:outline-none focus:ring-0 disabled:pointer-events-none disabled:opacity-50 bg-zinc-900/90 hover:bg-zinc-800 border border-zinc-700/50 h-14 w-14 p-0 rounded-full cursor-pointer fixed bottom-6 right-6 z-50 hidden shadow-lg shadow-black/50"

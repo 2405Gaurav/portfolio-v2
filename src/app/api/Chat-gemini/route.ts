@@ -335,7 +335,7 @@ If asked about portfolio, projects, or collaboration: ${persona.genAICourse.cour
   return context;
 }
 
-export async function POST(req: Request) {
+export async function POST(req: Request){
   try {
     const body = await req.json();
 
