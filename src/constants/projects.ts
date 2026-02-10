@@ -19,9 +19,21 @@ export const PROJECTS: Project[] = [
     homepage: 'https://gt-juryx.thegauravthakur.in/',
     github: 'https://github.com/2405Gaurav/GT-juryx',
     techstack: ['Next.js', 'Solidity', 'Blockchain', 'TypeScript', 'Tailwind CSS', 'IPFS','Docker','AWS'],
-    selected: true,
+    selected: false,
     dateCreated: '2024-11-20',
     coverImage: '/project-image/jrx.png'
+  },
+  {
+    slug: 'Code-And-Collab',
+    name: 'Code & Collab',
+    description:
+      'Code & Collab is a collaborative coding platform that enables developers to work together in real-time on shared projects. It features live code editing, version control integration, and seamless collaboration tools for teams of all sizes.',
+    homepage: 'https://code-collab.thegauravthakur.in/',
+    github: 'https://github.com/2405Gaurav/Collab-And-Code',
+    techstack: ['Next.js', 'Firebase-Auth', 'Firebase', 'TypeScript', 'Tailwind CSS', 'RealtimeDB','AWS'],
+    selected: true,
+    dateCreated: '2025-11-20',
+    coverImage: '/project-image/codecollab.png'
   },
 
   {
