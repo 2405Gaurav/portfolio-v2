@@ -28,10 +28,10 @@ export const HEADER_LINKS: HeaderLinks = [
   },
   {
     icon: <BarChartIcon className='size-3.5' />,
-    href: '/dashboard',
-    key: 'dashboard',
-    label: 'Dashboard',
-    labelKey: 'common.labels.dashboard'
+    href: '/experience',
+    key: 'Experience',
+    label: 'Experience',
+    labelKey: 'common.labels.experience'
   },
   {
     icon: <FlameIcon className='size-3.5' />,
