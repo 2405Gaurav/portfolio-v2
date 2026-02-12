@@ -74,10 +74,15 @@ export default function RecentMsgs() {
 
   return (
     <div className="p-6 max-w-4xl mx-auto space-y-6">
-      <h2 className="text-4xl font-bold text-white mb-8">Recent Messages</h2>
+      {/* Changed text-white to text-gray-900 */}
+      <h2 className="text-4xl font-bold text-gray-900 mb-8">Recent Messages</h2>
       
       {messages.map((msg: any) => (
-        <div key={msg.id} className="flex gap-4 pb-6 border-b border-gray-800">
+        <div 
+          key={msg.id} 
+          // Changed border-gray-800 to border-gray-200 (lighter border)
+          className="flex gap-4 pb-6 border-b border-gray-200"
+        >
           <img
             src={msg.user_image}
             alt="avatar"
@@ -85,7 +90,9 @@ export default function RecentMsgs() {
           />
           <div className="flex-1">
             <div className="flex items-baseline gap-3 mb-2">
-              <p className="font-semibold text-white text-lg">{msg.user_name}</p>
+              {/* Changed text-white to text-gray-900 */}
+              <p className="font-semibold text-gray-900 text-lg">{msg.user_name}</p>
+              
               <p className="text-gray-500 text-sm">
                 {new Date(msg.created_at).toLocaleDateString('en-US', {
                   month: 'long',
@@ -93,7 +100,8 @@ export default function RecentMsgs() {
                 })}
               </p>
             </div>
-            <p className="text-gray-300 leading-relaxed">{msg.message}</p>
+            {/* Changed text-gray-300 to text-gray-600 (darker text for readability) */}
+            <p className="text-gray-600 leading-relaxed">{msg.message}</p>
           </div>
         </div>
       ))}
