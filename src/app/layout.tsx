@@ -18,7 +18,7 @@ import Script from "next/script";
 
 
 export const metadata = {
-  metadataBase: new URL("https://yourdomain.com"),
+  metadataBase: new URL("https://www.thegauravthakur.in"),
 
   title: {
     default: "Gaurav Thakur | Backend Developer & Software Engineer",
