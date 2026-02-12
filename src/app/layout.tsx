@@ -3,6 +3,7 @@ import MainLayout from "@/pc/main-layout";
 import { ThemeProvider } from "@/providers/theme-provider";
 import "./globals.css";
 import SessionProvider from "@/providers/session-provider";//-->solution
+import Script from "next/script";
 
 // import { SessionProvider } from "next-auth/react";
 //SessionProvider gives your React app access to that logged-in user
@@ -18,6 +19,19 @@ export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body>
+            {/* Google Analytics */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-SQTNLDZEL"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-SQTNLDZEL');
+          `}
+        </Script>
         <SessionProvider>
           <ThemeProvider
             attribute="class"
