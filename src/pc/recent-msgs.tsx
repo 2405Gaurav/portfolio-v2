@@ -45,7 +45,6 @@
 //   );
 // }
 
-
 "use client";
 import { useEffect, useState } from "react";
 
@@ -61,27 +60,27 @@ export default function RecentMsgs() {
   }, []);
 
   if (error) {
-    return <div className="text-red-500">Failed to load messages</div>;
+    return <div className="text-red-500 dark:text-red-400">Failed to load messages</div>;
   }
 
   if (messages === null) {
-    return <div>Loading messages...</div>;
+    return <div className="text-gray-600 dark:text-gray-400">Loading messages...</div>;
   }
 
   if (messages.length === 0) {
-    return <div>No messages yet</div>;
+    return <div className="text-gray-600 dark:text-gray-400">No messages yet</div>;
   }
 
   return (
     <div className="p-6 max-w-4xl mx-auto space-y-6">
-      {/* Changed text-white to text-gray-900 */}
-      <h2 className="text-4xl font-bold text-gray-900 mb-8">Recent Messages</h2>
+      <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-8">
+        Recent Messages
+      </h2>
       
       {messages.map((msg: any) => (
         <div 
           key={msg.id} 
-          // Changed border-gray-800 to border-gray-200 (lighter border)
-          className="flex gap-4 pb-6 border-b border-gray-200"
+          className="flex gap-4 pb-6 border-b border-gray-200 dark:border-gray-800"
         >
           <img
             src={msg.user_image}
@@ -90,18 +89,20 @@ export default function RecentMsgs() {
           />
           <div className="flex-1">
             <div className="flex items-baseline gap-3 mb-2">
-              {/* Changed text-white to text-gray-900 */}
-              <p className="font-semibold text-gray-900 text-lg">{msg.user_name}</p>
+              <p className="font-semibold text-gray-900 dark:text-white text-lg">
+                {msg.user_name}
+              </p>
               
-              <p className="text-gray-500 text-sm">
+              <p className="text-gray-500 dark:text-gray-400 text-sm">
                 {new Date(msg.created_at).toLocaleDateString('en-US', {
                   month: 'long',
                   year: 'numeric'
                 })}
               </p>
             </div>
-            {/* Changed text-gray-300 to text-gray-600 (darker text for readability) */}
-            <p className="text-gray-600 leading-relaxed">{msg.message}</p>
+            <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+              {msg.message}
+            </p>
           </div>
         </div>
       ))}
