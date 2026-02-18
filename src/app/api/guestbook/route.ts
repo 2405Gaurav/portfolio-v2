@@ -29,5 +29,6 @@ export async function GET(){
         return new Response(error.message,{status:500});
 
     }
+    
     return Response.json(data);
 }
