@@ -24,6 +24,51 @@ export const PROJECTS: Project[] = [
     coverImage: '/project-image/jrx.png'
   },
   {
+  slug: 'interviewprep-ai',
+  name: 'InterviewPrep.AI (PREPGT)',
+  description:
+    'InterviewPrep.AI (PREPGT) is an advanced AI-driven mock interview ecosystem engineered for technical professionals. It orchestrates structured interviews using LangGraph and LangChain, integrates an in-browser coding IDE, and delivers LLM-powered performance intelligence using Google Gemini. The system features resume analysis, technical question generation, answer evaluation, behavioral assessment, fairness monitoring via MediaPipe, and structured report generation. Built on a distributed architecture with a Go microservice backend, MongoDB persistence layer, and React frontend, PREPGT is designed as a foundational module of a larger AI-powered education ecosystem for adaptive learning, skill benchmarking, and career readiness intelligence.',
+  homepage: 'https://prepgt.vercel.app',
+  github: 'https://github.com/2405Gaurav/prepgt',
+  techstack: [
+    'React',
+    'Vite',
+    'TailwindCSS',
+    'Go',
+    'MongoDB',
+    'JWT',
+    'LangChain',
+    'LangGraph',
+    'Google Gemini API',
+    'MediaPipe',
+    'Framer Motion',
+    'REST APIs'
+  ],
+  selected: true,
+  dateCreated: '2026-02-01',
+  coverImage: '/project-image/prepgt.png'
+},{
+  slug: 'divide-and-conquer',
+  name: 'Divide and Conquer',
+  description:
+    'Divide and Conquer is a real-time, AI-enhanced expense sharing platform built with scalable system design principles. It enables smart expense tracking, intelligent settlement algorithms, automated weekly and monthly spending insights, and real-time synchronization across users using Convex. The system leverages Inngest for reliable background job orchestration, supports automated reminders and notification workflows, and implements optimized settlement minimization logic. Designed with stateless backend patterns and event-driven architecture, the platform demonstrates real-world scalability, performance optimization, and distributed data flow management.',
+  homepage: 'https://dac-gt.thegauravthakur.in/',
+  github: 'https://github.com/2405Gaurav/Divide-and-Conquer',
+  techstack: [
+    'Next.js',
+    'JavaScript',
+    'Convex',
+    'Inngest',
+    'Real-time Database',
+    'System Design',
+    'Event-driven Architecture',
+    'WebSockets'
+  ],
+  selected: true,
+  dateCreated: '2026-02-05',
+  coverImage: '/project-image/divide-conquer.png'
+},
+  {
     slug: 'Code-And-Collab',
     name: 'Code & Collab',
     description:

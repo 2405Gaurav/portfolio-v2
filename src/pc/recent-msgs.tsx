@@ -6,7 +6,7 @@ export default function RecentMsgs() {
   const [error, setError] = useState(false);
   const [page, setPage] = useState(1);
 
-  const pageSize = 2;
+  const pageSize = 3;
 
   useEffect(() => {
     fetch("/api/guestbook")
