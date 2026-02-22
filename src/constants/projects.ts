@@ -28,7 +28,7 @@ export const PROJECTS: Project[] = [
   name: 'InterviewPrep.AI (PREPGT)',
   description:
     'InterviewPrep.AI (PREPGT) is an advanced AI-driven mock interview ecosystem engineered for technical professionals. It orchestrates structured interviews using LangGraph and LangChain, integrates an in-browser coding IDE, and delivers LLM-powered performance intelligence using Google Gemini. The system features resume analysis, technical question generation, answer evaluation, behavioral assessment, fairness monitoring via MediaPipe, and structured report generation. Built on a distributed architecture with a Go microservice backend, MongoDB persistence layer, and React frontend, PREPGT is designed as a foundational module of a larger AI-powered education ecosystem for adaptive learning, skill benchmarking, and career readiness intelligence.',
-  homepage: 'https://prepgt.vercel.app',
+  homepage: 'https://interview-prep-gt.vercel.app/',
   github: 'https://github.com/2405Gaurav/prepgt',
   techstack: [
     'React',
