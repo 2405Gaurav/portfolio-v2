@@ -4,7 +4,7 @@ import { BikeIcon } from 'lucide-react'
 
 const CurrentBike = () => {
   // Your current bike
-  const bike = 'Royal Enfiel   GT 650'
+  const bike = 'Royal Enfield    GT 650'
 
   return (
     <div className='flex flex-col gap-6 rounded-xl p-4 shadow-feature-card lg:p-6'>
