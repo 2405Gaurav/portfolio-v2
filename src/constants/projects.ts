@@ -44,7 +44,7 @@ export const PROJECTS: Project[] = [
     'Framer Motion',
     'REST APIs'
   ],
-  selected: true,
+  selected: false,
   dateCreated: '2026-02-01',
   coverImage: '/project-image/prepgt.png'
 },{
@@ -102,7 +102,7 @@ export const PROJECTS: Project[] = [
     homepage: 'https://web-gtools.vercel.app/',
     github: 'https://github.com/2405Gaurav/tools',
     techstack: ['Next.js', 'TypeScript', 'Tailwind CSS'],
-    selected: true,
+    selected: false,
     dateCreated: '2025-01-15',
     coverImage: '/project-image/gtools.png'
   },
