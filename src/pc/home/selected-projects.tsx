@@ -120,7 +120,7 @@ const Card = (props: CardProps) => {
         />
         
         {/* Gradient overlay for better text visibility */}
-        <div className='absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent rounded-lg' />
+        <div className='absolute inset-0 bg-linear-to-t from-black/80 via-black/20 to-transparent rounded-lg' />
         
         {/* Text content */}
         <div className='absolute bottom-0 left-0 right-0 p-6 transition-all duration-300 group-hover:pb-8'>

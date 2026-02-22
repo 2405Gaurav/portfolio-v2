@@ -1,5 +1,5 @@
 import {  SiGithub, SiInstagram, SiX  } from '@icons-pack/react-simple-icons'
-import { BarChartIcon, FlameIcon, MessageCircleIcon,  PencilIcon, UserCircleIcon } from 'lucide-react'
+import { BarChartIcon, FlameIcon, MessageCircleIcon,  UserCircleIcon } from 'lucide-react'
 
 import {  SITE_GITHUB_URL, SITE_INSTAGRAM_URL, SITE_X_URL,CODO } from '@/lib/constants'
 
@@ -12,13 +12,6 @@ type HeaderLinks = Array<{
 }>
 
 export const HEADER_LINKS: HeaderLinks = [
-  {
-    icon: <PencilIcon className='size-3.5' />,
-    href: '/blog',
-    key: 'blog',
-    label: 'Blog',
-    labelKey: 'common.labels.blog'
-  },
   {
     icon: <MessageCircleIcon className='size-3.5' />,
     href: '/guestbook',
