@@ -19,7 +19,7 @@ export const PROJECTS: Project[] = [
     homepage: 'https://digitalhero-golf.thegauravthakur.in/',
     github: 'https://github.com/2405Gaurav/production-golf-site',
     techstack: ['Next.js', 'TypeScript', 'Prisma', 'PostgreSQL', 'Razorpay', 'Tailwind CSS'],
-    selected: true,
+    selected: false,
     dateCreated: '2026-03-01',
     coverImage: '/project-image/golf.png'
   },
@@ -43,7 +43,7 @@ export const PROJECTS: Project[] = [
     homepage: 'https://thinkly-chatbot.thegauravthakur.in/',
     github: 'https://github.com/2405Gaurav/thinkly-chatbot-',
     techstack: ['Next.js', 'TypeScript', 'Gemini API', 'Vercel AI SDK', 'Tailwind CSS'],
-    selected: true,
+    selected: false,
     dateCreated: '2026-02-25',
     coverImage: '/project-image/placementgpt.png'
   },
@@ -55,7 +55,7 @@ export const PROJECTS: Project[] = [
     homepage: 'https://tarschat.thegauravthakur.in',
     github: 'https://github.com/2405Gaurav/Tars-Chat_Assignment',
     techstack: ['Next.js', 'TypeScript', 'Convex', 'Clerk', 'Tailwind CSS', 'Realtime Systems'],
-    selected: true,
+    selected: false,
     dateCreated: '2026-02-10',
     coverImage: '/project-image/tars.png'
   },
@@ -95,7 +95,7 @@ export const PROJECTS: Project[] = [
       'Event-driven Architecture',
       'WebSockets'
     ],
-    selected: true,
+    selected: false,
     dateCreated: '2026-02-05',
     coverImage: '/project-image/divide-conquer.png'
   },
