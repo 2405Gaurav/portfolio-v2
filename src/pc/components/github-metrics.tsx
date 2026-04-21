@@ -3,15 +3,13 @@
 import { useEffect, useState } from 'react'
 import { motion } from 'motion/react'
 import { SiGithub } from '@icons-pack/react-simple-icons'
-import { StarIcon, GitForkIcon, UsersIcon, BookOpenIcon, GitCommitHorizontalIcon, CodeIcon } from 'lucide-react'
+import { StarIcon, UsersIcon, BookOpenIcon, GitCommitHorizontalIcon, CodeIcon } from 'lucide-react'
 import Counter from '@/pc/counter'
 
 type GitHubMetrics = {
   followers: number
-  following: number
   publicRepos: number
   totalStars: number
-  totalForks: number
   totalContributions: number
   topLanguages: { name: string; count: number }[]
 }
@@ -46,25 +44,19 @@ const statCards = [
     key: 'publicRepos',
     label: 'Repositories',
     icon: <BookOpenIcon className='size-4' />,
-    gradient: 'from-blue-500 to-cyan-500',
+    gradient: 'from-violet-500 to-indigo-500',
   },
   {
     key: 'totalContributions',
     label: 'Contributions',
     icon: <GitCommitHorizontalIcon className='size-4' />,
-    gradient: 'from-emerald-500 to-green-600',
+    gradient: 'from-emerald-500 to-teal-600',
   },
   {
     key: 'followers',
     label: 'Followers',
     icon: <UsersIcon className='size-4' />,
-    gradient: 'from-purple-500 to-pink-500',
-  },
-  {
-    key: 'totalForks',
-    label: 'Total Forks',
-    icon: <GitForkIcon className='size-4' />,
-    gradient: 'from-rose-500 to-red-600',
+    gradient: 'from-fuchsia-500 to-pink-500',
   },
 ]
 
@@ -73,11 +65,14 @@ export default function GitHubMetricsCard() {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
+    // Calls the server-side /api/github-metrics route — no CORS issues
     const fetchMetrics = async () => {
       try {
         const res = await fetch('/api/github-metrics')
-        const data = await res.json()
-        setMetrics(data)
+        if (res.ok) {
+          const data = await res.json()
+          setMetrics(data)
+        }
       } catch (e) {
         console.error('Failed to fetch GitHub metrics', e)
       } finally {
@@ -94,8 +89,8 @@ export default function GitHubMetricsCard() {
           <div className='size-10 rounded-xl bg-muted animate-pulse' />
           <div className='h-6 w-40 rounded bg-muted animate-pulse' />
         </div>
-        <div className='grid grid-cols-2 sm:grid-cols-3 gap-4'>
-          {[...Array(5)].map((_, i) => (
+        <div className='grid grid-cols-2 sm:grid-cols-4 gap-4'>
+          {[...Array(4)].map((_, i) => (
             <div key={i} className='h-24 rounded-xl bg-muted animate-pulse' />
           ))}
         </div>
@@ -124,7 +119,7 @@ export default function GitHubMetricsCard() {
       </div>
 
       {/* Stats Grid */}
-      <div className='grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 mb-8'>
+      <div className='grid grid-cols-2 sm:grid-cols-4 gap-3 mb-8'>
         {statCards.map((stat, index) => (
           <motion.div
             key={stat.key}
@@ -133,7 +128,7 @@ export default function GitHubMetricsCard() {
             transition={{ duration: 0.3, delay: 0.1 * index }}
             className='group relative overflow-hidden rounded-xl border border-border/30 bg-background/50 p-4 transition-all duration-300 hover:border-border hover:shadow-md'
           >
-            <div className={`absolute inset-0 bg-gradient-to-br ${stat.gradient} opacity-0 transition-opacity duration-300 group-hover:opacity-[0.06]`} />
+            <div className={`absolute inset-0 bg-gradient-to-br ${stat.gradient} opacity-0 transition-opacity duration-300 group-hover:opacity-[0.08]`} />
             <div className='relative'>
               <div className={`mb-2 inline-flex rounded-lg bg-gradient-to-br ${stat.gradient} p-1.5 text-white`}>
                 {stat.icon}
@@ -148,7 +143,7 @@ export default function GitHubMetricsCard() {
       </div>
 
       {/* Top Languages */}
-      {metrics.topLanguages.length > 0 && (
+      {metrics.topLanguages && metrics.topLanguages.length > 0 && (
         <div>
           <div className='flex items-center gap-2 mb-4'>
             <CodeIcon className='size-4 text-muted-foreground' />

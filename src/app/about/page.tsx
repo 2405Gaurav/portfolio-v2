@@ -75,7 +75,7 @@ const Page = () => {
             or exploring any technology that drives innovation — I'm always ready to dive in and master it.
           </p>
           <p className='text-lg leading-relaxed mt-4'>
-            I started my web development journey on <span className='font-semibold'> 2024</span>. 
+            I started my web development journey in <span className='font-semibold'>2024</span>. 
             It's been an incredible challenge, and I'm completely self-taught through YouTube and hands-on projects. 
             One of my favorite resources has been{' '}
             <Link 
@@ -85,6 +85,24 @@ const Page = () => {
               The Net Ninja
             </Link>
             , where I learned a lot of fundamental web development skills.
+          </p>
+          <p className='text-lg leading-relaxed mt-4'>
+            For backend development, I learned from first principles through{' '}
+            <Link
+              href='https://www.youtube.com/@sriniously'
+              className='text-orange-500 hover:text-orange-600 transition-colors'
+            >
+              Sriniously
+            </Link>
+            's incredible{' '}
+            <Link
+              href='https://www.youtube.com/watch?v=0Rwb4Xmlcwc&list=PLui3EUkuMTPgZcV0QhQrOcwMPcBCcd_Q1'
+              className='text-orange-500 hover:text-orange-600 transition-colors font-semibold'
+            >
+              &quot;Backend from First Principles&quot;
+            </Link>
+            {' '}playlist. It completely changed how I think about servers, APIs, and databases — 
+            going deep into the &quot;why&quot; behind every concept rather than just the &quot;how&quot;.
           </p>
           <p className='text-lg leading-relaxed mt-4'>
             Beyond web development, I'm deeply passionate about problem-solving. 
@@ -141,10 +159,10 @@ const Page = () => {
           </div>
           <div className='grid grid-cols-2 sm:grid-cols-4 gap-4 not-prose'>
             {[
-              { label: 'Framework', value: 'Next.js', href: 'https://nextjs.org', color: 'from-gray-700 to-black dark:from-white dark:to-gray-300' },
-              { label: 'Styling', value: 'Tailwind CSS', href: 'https://tailwindcss.com', color: 'from-cyan-500 to-blue-500' },
-              { label: 'Animations', value: 'Motion', href: 'https://motion.dev', color: 'from-purple-500 to-pink-500' },
-              { label: 'Deployment', value: 'Vercel', href: 'https://vercel.com', color: 'from-gray-700 to-black dark:from-white dark:to-gray-300' },
+              { label: 'Framework', value: 'Next.js', href: 'https://nextjs.org', emoji: '⚡' },
+              { label: 'Styling', value: 'Tailwind CSS', href: 'https://tailwindcss.com', emoji: '🎨' },
+              { label: 'Animations', value: 'Motion + GSAP', href: 'https://motion.dev', emoji: '✨' },
+              { label: 'Deployment', value: 'Vercel', href: 'https://vercel.com', emoji: '🚀' },
             ].map((item) => (
               <Link
                 key={item.label}
@@ -152,10 +170,8 @@ const Page = () => {
                 className='group flex flex-col rounded-xl border border-border/50 bg-card/50 p-4 transition-all duration-300 hover:border-border hover:shadow-md no-underline'
               >
                 <span className='text-xs text-muted-foreground mb-1'>{item.label}</span>
-                <span className='text-sm font-semibold bg-gradient-to-r bg-clip-text text-transparent' style={{
-                  backgroundImage: `linear-gradient(to right, var(--tw-gradient-stops))`,
-                }}>
-                  {item.value}
+                <span className='text-sm font-semibold'>
+                  {item.emoji} {item.value}
                 </span>
               </Link>
             ))}

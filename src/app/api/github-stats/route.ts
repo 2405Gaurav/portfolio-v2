@@ -5,20 +5,33 @@ export async function GET() {
     // Replace with your GitHub username and repo name
     const owner = '2405Gaurav' // Your GitHub username
     const repo = 'portfolio-v2' // Your repository name
+
+    const headers: Record<string, string> = {
+      'Accept': 'application/vnd.github.v3+json',
+    }
+    // Optional: Add token for higher rate limits
+    if (process.env.GITHUB_TOKEN) {
+      headers['Authorization'] = `Bearer ${process.env.GITHUB_TOKEN}`
+    }
     
-    const response = await fetch(
+    let response = await fetch(
       `https://api.github.com/repos/${owner}/${repo}`,
       {
-        headers: {
-          'Accept': 'application/vnd.github.v3+json',
-          // Optional: Add token for higher rate limits
-          ...(process.env.GITHUB_TOKEN && {
-            'Authorization': `Bearer ${process.env.GITHUB_TOKEN}`
-          })
-        },
+        headers,
         next: { revalidate: 3600 } // Cache for 1 hour
       }
     )
+
+    // If token is expired (401), retry without auth
+    if (response.status === 401) {
+      response = await fetch(
+        `https://api.github.com/repos/${owner}/${repo}`,
+        {
+          headers: { 'Accept': 'application/vnd.github.v3+json' },
+          next: { revalidate: 3600 }
+        }
+      )
+    }
 
     if (!response.ok) {
       throw new Error(`GitHub API responded with ${response.status}`)
