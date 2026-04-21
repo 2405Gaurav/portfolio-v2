@@ -62,7 +62,7 @@ const LayoutFooter = () => {
   }, [])
 
   return (
-    <footer className='relative mx-auto mb-6 flex w-full max-w-5xl flex-col rounded-2xl bg-background/30 p-8 shadow-xs saturate-100 backdrop-blur-md'>
+    <footer className='relative mx-auto mb-6 flex w-full max-w-5xl flex-col overflow-hidden rounded-2xl bg-background/30 p-8 shadow-xs saturate-100 backdrop-blur-md'>
       <NowPlaying />
       <div className='mt-12 grid grid-cols-2 sm:grid-cols-3'>
         {FOOTER_LINKS.map((list) => (
@@ -79,10 +79,17 @@ const LayoutFooter = () => {
           </div>
         ))}
       </div>
-      <div className='mt-20 flex flex-col gap-4'>
-        
+
+      {/* Credits & Star Section */}
+      <div className='mt-12 flex flex-col gap-4'>
+        <p className='text-xs text-muted-foreground'>
+          Inspired by Nelson Lai, Yuri Cunha, and{' '}
+          <Link href='https://github.com' variant='muted' className='underline underline-offset-2'>
+            others
+          </Link>
+        </p>
         <div className='flex items-center justify-between text-sm'>
-          <div>&copy; {new Date().getFullYear()} Gaurav</div>
+          <div>&copy; Gaurav {new Date().getFullYear()}. All rights reserved.</div>
           <Link
             href='https://github.com/2405Gaurav/portfolio-v2'
             className='flex items-center justify-center overflow-hidden rounded-md border'
@@ -103,6 +110,24 @@ const LayoutFooter = () => {
             </div>
           </Link>
         </div>
+      </div>
+
+      {/* Giant "GT" Watermark — large background text like the reference image */}
+      <div
+        className='pointer-events-none absolute bottom-0 left-0 right-0 flex select-none items-end justify-center overflow-hidden'
+        aria-hidden='true'
+      >
+        <span
+          className='translate-y-[18%] whitespace-nowrap text-[18rem] sm:text-[24rem] md:text-[30rem] lg:text-[36rem] font-black leading-none tracking-tighter'
+          style={{
+            background: 'linear-gradient(180deg, rgba(128,128,128,0.25) 0%, rgba(128,128,128,0.03) 100%)',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+            backgroundClip: 'text',
+          }}
+        >
+          GT
+        </span>
       </div>
     </footer>
   )

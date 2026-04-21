@@ -12,6 +12,8 @@ import {
 } from '@/lib/constants'
 import { createMetadata } from '@/lib/metadata'
 import { getBaseUrl } from '@/utils/get-base-url'
+import GitHubMetricsCard from '@/pc/components/github-metrics'
+import AboutHeroSection from '@/pc/components/about-hero'
 
 export const metadata: Metadata = createMetadata({
   pathname: '/about',
@@ -25,7 +27,7 @@ export const metadata: Metadata = createMetadata({
 
 const Page = () => {
   const title = 'About'
-  const description = 'Hi! I\'m a passionate web developer creating innovative projects with modern technologies. Explore my portfolio, skills, and journey in building user-friendly apps. Let\'s connect!'
+  const description = 'Engineer · Builder · Problem Solver'
   const url = `${getBaseUrl()}/about`
 
   const jsonLd: WithContext<AboutPage> = {
@@ -49,11 +51,18 @@ const Page = () => {
       <JsonLd json={jsonLd} />
       <PageHeader title={title} description={description} />
       
-      <div className='prose prose-lg dark:prose-invert max-w-3xl mx-auto mt-6 space-y-12'>
+      {/* Hero section with image */}
+      <AboutHeroSection />
+      
+      <div className='prose prose-lg dark:prose-invert max-w-3xl mx-auto mt-8 space-y-16'>
         
         {/* WHO AM I Section */}
         <section>
-          <h2 className='text-3xl font-bold mb-6'>WHO AM I</h2>
+          <div className='flex items-center gap-3 mb-6'>
+            <div className='h-px flex-1 bg-gradient-to-r from-border to-transparent' />
+            <h2 className='text-2xl font-bold tracking-tight m-0'>WHO AM I</h2>
+            <div className='h-px flex-1 bg-gradient-to-l from-border to-transparent' />
+          </div>
           <p className='text-lg leading-relaxed'>
             I'm an Engineer passionate about crafting exceptional web experiences. 
             Currently mastering TypeScript, Next.js, React.js, Node.js, and database management. 
@@ -113,78 +122,73 @@ const Page = () => {
           </p>
         </section>
 
+        {/* GitHub Metrics Section */}
+        <section className='not-prose'>
+          <div className='flex items-center gap-3 mb-6'>
+            <div className='h-px flex-1 bg-gradient-to-r from-border to-transparent' />
+            <h2 className='text-2xl font-bold tracking-tight'>GitHub Metrics</h2>
+            <div className='h-px flex-1 bg-gradient-to-l from-border to-transparent' />
+          </div>
+          <GitHubMetricsCard />
+        </section>
+
         {/* About This Site Section */}
         <section>
-          <h2 className='text-3xl font-bold mb-6'>About this site</h2>
-          <ul className='space-y-3 text-lg'>
-            <li>
-              <span className='font-semibold'>Framework:</span>{' '}
-              <Link href='https://nextjs.org' className='text-blue-500 hover:text-blue-600 transition-colors'>
-                Next.js
+          <div className='flex items-center gap-3 mb-6'>
+            <div className='h-px flex-1 bg-gradient-to-r from-border to-transparent' />
+            <h2 className='text-2xl font-bold tracking-tight m-0'>About this site</h2>
+            <div className='h-px flex-1 bg-gradient-to-l from-border to-transparent' />
+          </div>
+          <div className='grid grid-cols-2 sm:grid-cols-4 gap-4 not-prose'>
+            {[
+              { label: 'Framework', value: 'Next.js', href: 'https://nextjs.org', color: 'from-gray-700 to-black dark:from-white dark:to-gray-300' },
+              { label: 'Styling', value: 'Tailwind CSS', href: 'https://tailwindcss.com', color: 'from-cyan-500 to-blue-500' },
+              { label: 'Animations', value: 'Motion', href: 'https://motion.dev', color: 'from-purple-500 to-pink-500' },
+              { label: 'Deployment', value: 'Vercel', href: 'https://vercel.com', color: 'from-gray-700 to-black dark:from-white dark:to-gray-300' },
+            ].map((item) => (
+              <Link
+                key={item.label}
+                href={item.href}
+                className='group flex flex-col rounded-xl border border-border/50 bg-card/50 p-4 transition-all duration-300 hover:border-border hover:shadow-md no-underline'
+              >
+                <span className='text-xs text-muted-foreground mb-1'>{item.label}</span>
+                <span className='text-sm font-semibold bg-gradient-to-r bg-clip-text text-transparent' style={{
+                  backgroundImage: `linear-gradient(to right, var(--tw-gradient-stops))`,
+                }}>
+                  {item.value}
+                </span>
               </Link>
-            </li>
-            <li>
-              <span className='font-semibold'>Styling:</span>{' '}
-              <Link href='https://tailwindcss.com' className='text-cyan-500 hover:text-cyan-600 transition-colors'>
-                Tailwind CSS
-              </Link>
-            </li>
-            <li>
-              <span className='font-semibold'>Animations:</span>{' '}
-              <Link href='https://motion.dev' className='text-purple-500 hover:text-purple-600 transition-colors'>
-                Motion
-              </Link>
-              {' '}& GSAP
-            </li>
-            <li>
-              <span className='font-semibold'>Deployment:</span>{' '}
-              <Link href='https://vercel.com' className='text-cyan-500 hover:text-cyan-600 transition-colors'>
-                Vercel
-              </Link>
-            </li>
-          </ul>
+            ))}
+          </div>
           <p className='text-sm text-muted-foreground mt-6 italic'>
             Note: My code isn't like the starter code because I changed a lot of code to make it truly mine! 😊
           </p>
         </section>
 
         {/* Social Links Section */}
-        <section>
-          <h2 className='text-3xl font-bold mb-6'>Social links</h2>
-          <ul className='space-y-3 text-lg'>
-            <li>
-              <Link 
-                href={SITE_GITHUB_URL} 
-                className='text-purple-500 hover:text-purple-600 transition-colors font-medium'
+        <section className='not-prose'>
+          <div className='flex items-center gap-3 mb-6'>
+            <div className='h-px flex-1 bg-gradient-to-r from-border to-transparent' />
+            <h2 className='text-2xl font-bold tracking-tight'>Connect</h2>
+            <div className='h-px flex-1 bg-gradient-to-l from-border to-transparent' />
+          </div>
+          <div className='grid grid-cols-2 sm:grid-cols-4 gap-3'>
+            {[
+              { name: 'GitHub', href: SITE_GITHUB_URL, icon: '🐙', gradient: 'hover:border-gray-500' },
+              { name: 'Instagram', href: SITE_INSTAGRAM_URL, icon: '📸', gradient: 'hover:border-pink-500' },
+              { name: 'X (Twitter)', href: SITE_X_URL, icon: '🐦', gradient: 'hover:border-blue-400' },
+              { name: 'Codolio', href: 'https://codolio.com/profile/EREN_01', icon: '🧩', gradient: 'hover:border-emerald-500' },
+            ].map((social) => (
+              <Link
+                key={social.name}
+                href={social.href}
+                className={`flex items-center gap-3 rounded-xl border border-border/50 bg-card/50 p-4 transition-all duration-300 ${social.gradient} hover:shadow-md no-underline`}
               >
-                GitHub
+                <span className='text-xl'>{social.icon}</span>
+                <span className='text-sm font-medium'>{social.name}</span>
               </Link>
-            </li>
-            <li>
-              <Link 
-                href={SITE_INSTAGRAM_URL} 
-                className='text-pink-500 hover:text-pink-600 transition-colors font-medium'
-              >
-                Instagram
-              </Link>
-            </li>
-            <li>
-              <Link 
-                href={SITE_X_URL} 
-                className='text-blue-400 hover:text-blue-500 transition-colors font-medium'
-              >
-                X (Twitter)
-              </Link>
-            </li>
-            <li>
-              <Link 
-                href='https://codolio.com/profile/EREN_01' 
-                className='text-emerald-500 hover:text-emerald-600 transition-colors font-medium'
-              >
-                Codolio
-              </Link>
-            </li>
-          </ul>
+            ))}
+          </div>
         </section>
 
         {/* Logo Section Note */}
