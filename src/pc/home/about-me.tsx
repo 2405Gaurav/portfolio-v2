@@ -57,7 +57,7 @@ const AboutMe = () => {
         About Me
       </motion.h2>
       <motion.div
-        className='mt-12 grid gap-4 md:grid-cols-2'
+        className='mt-12 grid gap-4'
         initial={{
           y: 40,
           opacity: 0
@@ -70,14 +70,18 @@ const AboutMe = () => {
           duration: 0.3
         }}
       >
-        <div className='grid gap-4'>
+        {/* Top row: Location + Connect */}
+        <div className='grid gap-4 md:grid-cols-2'>
           <LocationCard />
-          <StacksCard />
-        </div>
-        <div className='grid gap-4'>
           <Connect />
-          <div className='grid grid-cols-1 gap-4 [@media(min-width:450px)]:grid-cols-2'>
+        </div>
+        {/* Bottom row: Tech Stack (large) + Open to Work (small) + Currently Learning (small) */}
+        <div className='grid gap-4 grid-cols-1 md:grid-cols-[1fr_auto_auto]'>
+          <StacksCard />
+          <div className='md:w-52'>
             <CurrentBike />
+          </div>
+          <div className='md:w-44'>
             <FavoriteFramework />
           </div>
         </div>

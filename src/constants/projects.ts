@@ -92,7 +92,7 @@ export const PROJECTS: Project[] = [
       'Gemini API',
       'REST APIs'
     ],
-    selected: true,
+    selected: false,
     dateCreated: '2026-02-01',
     coverImage: '/project-image/prepgt.png'
   },
@@ -136,7 +136,7 @@ export const PROJECTS: Project[] = [
     homepage: 'https://code-collab.thegauravthakur.in/',
     github: 'https://github.com/2405Gaurav/Collab-And-Code',
     techstack: ['Next.js', 'Firebase-Auth', 'Firebase', 'TypeScript', 'Tailwind CSS', 'RealtimeDB','AWS'],
-    selected: true,
+    selected: false,
     dateCreated: '2025-11-20',
     coverImage: '/project-image/codecollab.png'
   },
