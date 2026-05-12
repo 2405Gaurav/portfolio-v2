@@ -6,11 +6,25 @@ export type Project = {
   github: string
   techstack: string[]
   selected: boolean
+  featured?: boolean
   dateCreated: string
   coverImage: string
 }
 
 export const PROJECTS: Project[] = [
+  {
+    slug: 'deeprecall',
+    name: 'DeepRecall — AI Flashcard Engine',
+    description:
+      'Turn any PDF into a smart, practice-ready flashcard deck. Built for the Cuemath AI Builder Challenge, DeepRecall uses Google Gemini to generate teacher-quality flashcards with SM-2 inspired spaced repetition, 3D card flips, streak tracking with 13 milestone badges, confetti celebrations, and a full analytics dashboard. Features active recall, growing review intervals, mascot reactions, and gamification that makes learning addictive.',
+    homepage: 'https://deeprecallcm.thegauravthakur.in/',
+    github: 'https://github.com/2405Gaurav/DeepRecall---PDF-to-smart-Flashcards',
+    techstack: ['Next.js', 'TypeScript', 'Prisma', 'PostgreSQL', 'Gemini API', 'Spaced Repetition'],
+    selected: true,
+    featured: true,
+    dateCreated: '2026-04-15',
+    coverImage: '/project-image/deeprecall.png'
+  },
   {
     slug: 'golf-charity-platform',
     name: 'Golf Charity Subscription Platform',
@@ -32,6 +46,7 @@ export const PROJECTS: Project[] = [
     github: 'https://github.com/2405Gaurav',
     techstack: ['Next.js', 'TypeScript', 'React Flow', 'Zustand', 'Trigger.dev', 'PostgreSQL', 'Gemini API'],
     selected: true,
+    featured: true,
     dateCreated: '2026-03-20',
     coverImage: '/project-image/nextflow.png'
   },
@@ -308,4 +323,8 @@ export const getLatestProjects = (limit?: number) => {
     new Date(b.dateCreated).getTime() - new Date(a.dateCreated).getTime()
   )
   return limit ? sorted.slice(0, limit) : sorted
+}
+
+export const getFeaturedProjects = () => {
+  return PROJECTS.filter(project => project.featured)
 }

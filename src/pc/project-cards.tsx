@@ -24,18 +24,25 @@ const ProjectCards = (props: ProjectCardsProps) => {
 }
 
 const ProjectCard = (props: ProjectCardProps) => {
-  const { name, description, techstack, slug,coverImage } = props
+  const { name, description, techstack, slug, coverImage, featured } = props
 
   return (
-    <Link href={`/projects/${slug}`} className='group rounded-xl px-2 py-4 shadow-feature-card'>
-      <BlurImage
-        src={coverImage}
-        width={1200}
-        height={630}
-        imageClassName='group-hover:scale-105'
-        alt={name}
-        className='rounded-lg'
-      />
+    <Link href={`/projects/${slug}`} className={`group rounded-xl px-2 py-4 shadow-feature-card ${featured ? 'ring-1 ring-amber-500/20' : ''}`}>
+      <div className='relative'>
+        <BlurImage
+          src={coverImage}
+          width={1200}
+          height={630}
+          imageClassName='group-hover:scale-105'
+          alt={name}
+          className='rounded-lg'
+        />
+        {featured && (
+          <div className='absolute top-3 right-3 flex items-center gap-1.5 rounded-full bg-amber-500/90 backdrop-blur-sm px-3 py-1 text-xs font-medium text-white shadow-lg'>
+            ⭐ Featured
+          </div>
+        )}
+      </div>
       <div className='flex-1 px-2 py-4'>
         <div className='space-y-2'>
           <h2 className='text-2xl font-semibold'>{name}</h2>

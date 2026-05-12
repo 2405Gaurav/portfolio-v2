@@ -76,7 +76,7 @@ const AboutMe = () => {
         </div>
         <div className='grid gap-4'>
           <Connect />
-          <div className='grid gap-4 [@media(min-width:450px)]:grid-cols-2'>
+          <div className='grid grid-cols-1 gap-4 [@media(min-width:450px)]:grid-cols-2'>
             <CurrentBike />
             <FavoriteFramework />
           </div>
